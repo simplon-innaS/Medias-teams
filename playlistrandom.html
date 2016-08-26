@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Playlist</title>
+  </head>
+  <body>
+    <button name="button" onclick="random();">Click here</button>
+    <video class= "video0"></video>
+
+    <script type="text/javascript">
+    var tableauVideo= [
+    {id: 1, src: 'airbnb.mp4'},
+    {id: 2, src: 'astronomyy.mp4'},
+    {id: 3, src: 'rihannach.mp4'}
+    ];
+    function random(){
+      var videoHasard = tableauVideo[Math.floor(Math.random()*tableauVideo.length)].src;
+      var video = document.getElementsByClassName("video0")[0];
+      alert(videoHasard);
+      if (videoHasard == tableauVideo[0].src){
+        video.src = tableauVideo[0].src;
+        video.controls = "true";
+      } else if(videoHasard == tableauVideo[1].src){
+        video.src = tableauVideo[1].src;
+        video.controls="true";
+      }else{
+        video.src = tableauVideo[2].src;
+        video.controls="true";
+      }
+    }
+    </script>
+  </body>
+</html>

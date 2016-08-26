@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Playlist Video</title>
+  </head>
+  <body>
+    <button class="video1" onclick="video(0)">Video 1</button>
+    <button class="video2" onclick="video(1)">Video 2</button>
+    <button class="video3" onclick="video(2)">Video 3</button>
+    <button class="video4" onclick="video(3)">Video 4</button>
+    <br/><video class= "video0"></video>
+
+
+    <script type="text/javascript">
+    //on declare un tableau avec toutes les videos
+    var tableauVideo = [
+    {id: 1, src: 'airbnb.mp4'},
+    {id: 2, src: 'astronomyy.mp4'},
+    {id: 3, src: 'rihannach.mp4'},
+    {id: 4, src: 'calvinharris.mp4'}
+    ];
+
+    //on cree un fonction qui aura pour parametre vid qui sera genere selon les index des videos (onclick=video(0) il va afficher la video 0 du tableau)
+    function video(vid){
+      //on recupere la class video pour pouvoir modifier la balise
+      var video = document.getElementsByClassName("video0")[0];
+      //on modifie le src, controls (=pour afficher les play,pause &co) et le autoplay = va s'allumer automatiquement)
+      video.src = tableauVideo[vid].src;
+      video.controls = "true";
+      video.autoplay = "true";
+    }
+    </script>
+  </body>
+</html>
