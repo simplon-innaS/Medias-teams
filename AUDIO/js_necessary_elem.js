@@ -43,9 +43,11 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length; p++) {
 	console.log("var piste => numero ", p, piste, "\npiste Objet =>",pisteObj, hOp);
 	/// remplacer la piste
 	tagAudio[p].setAttribute('src', piste);
-	console.log("piste supprimée: ", PlayList.splice(0,1, piste));
+
+	//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
 	console.log("piste ", p,"----", piste ,"----------------- Loop ", p+1);
 };
+
 
 
 //parcourir la playlist et insérer petit à petit
@@ -91,31 +93,37 @@ var controlers = document.getElementsByClassName('controlers')[0].getAttribute('
 // haut_gauche.setAttribute('className', 'haut_gauche'); // pour IE
 */
 
-
 // recuperer tous les propriété du tableau d'objet
 console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
 //var propTab = []
-for(var iProp in pisteObj){
-	console.log(pisteObj)
-	console.log("propriété ==>", iProp);
-	var prop = iProp;
+// for(var prop in pisteObj){
+// 	console.log("propriété ==>", prop);
+// };
+	
+	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
+	console.log(pisteOwnProp);
+for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
+	pisteObj =PlayList[cpt];
+	console.log(pisteObj);
+	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
+	prop = pisteOwnProp[cpt];
+	console.log("tab prop =", prop);
 
 	// récupérer le TagName HTML qui correspond à la propriété Playliste
-	var tagLi = document.getElementsByClassName(prop)
-	//console.log(tagLi);
-	for (var i = 0; i < tagLi.length; i++) {
-		console.log(pisteObj);
-
+	var tagLi = document.getElementsByClassName(prop);
+	console.log(tagLi);
+	for (var i = 0; i < PlayList.length - 1; i++) {
 		// récupérer la valeur de l'attribut du LI
 		var classe = tagLi[i].getAttribute('class');
 		console.log(classe);
-
 		// comparer la valeur de l'attribut class avec la propriété de l'obj
-		if (prop == classe) {
+		if (prop == classe && prop ) {
 			console.log('yes cette propriété et cette classe correspondent');
-			console.log("valeur de la prop ", prop , " et de  ", classe), 'est', pisteObj(prop);
+			console.log("valeur de la prop ", prop , " et de  ", classe, 'est', pisteOwnProp.prop);
+			
 		};
 	};
+	console.log("tab prop =", prop);
 	// propTab.push(prop);
 	//console.log(propTab);
 }
