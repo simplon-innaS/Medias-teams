@@ -24,11 +24,11 @@
 
 // tableau des données piste
 var PlayList = [
-{track: 1, artist: "Rihanna", album: "Anti", title:"Needed Me", src: "./neededme.mp3", imgsrc: "./img/neededme.jpg" }, // 0
-{track: 2, artist: "Young Money", /*album: "Rise Of An Empire",*/ title:"Senile", src: "./senile.mp3", imgsrc: "./img/senile.jpg" } , // 1
-{track: 3, artist: "Rihanna", album: "Good Girl Gone Bad", title:"Rehab", src: "./rehab.mp3", imgsrc: "./img/rehab.jpg" }, // 2
-{track: 4, artist: "Bjork", album: "Homogenic", title:"Joga", src: "./joga.mp3", imgsrc: "./img/joga.jpg" }, // 3
-{track: 5, artist: "Yemi Alade", album: "King of Queens", title:"Johnny", src: "./johnny.mp3", imgsrc: "./img/johnny.jpg" },// 4
+{track: 1, artist: "Rihanna", album: "Anti", title:"Needed Me", src: "./mp3/neededme.mp3", imgsrc: "./img/neededme.jpg" }, // 0
+{track: 2, artist: "Young Money", /*album: "Rise Of An Empire",*/ title:"Senile", src: "./mp3/senile.mp3", imgsrc: "./img/senile.jpg" } , // 1
+{track: 3, artist: "Rihanna", album: "Good Girl Gone Bad", title:"Rehab", src: "./mp3/rehab.mp3", imgsrc: "./img/rehab.jpg" }, // 2
+{track: 4, artist: "Bjork", album: "Homogenic", title:"Joga", src: "./mp3/joga.mp3", imgsrc: "./img/joga.jpg" }, // 3
+{track: 5, artist: "Yemi Alade", album: "King of Queens", title:"Johnny", src: "./mp3/johnny.mp3", imgsrc: "./img/johnny.jpg" },// 4
 ];
 
 console.log("\nINSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
@@ -95,9 +95,10 @@ var controlers = document.getElementsByClassName('controlers')[0].getAttribute('
 // recuperer tous les propriété du tableau d'objet
 console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
 //var propTab = []
-for(prop in pisteObj){
+for(var iProp in pisteObj){
 	console.log(pisteObj)
-	console.log("propriété ==>", prop);
+	console.log("propriété ==>", iProp);
+	var prop = iProp;
 
 	// récupérer le TagName HTML qui correspond à la propriété Playliste
 	var tagLi = document.getElementsByClassName(prop)
@@ -112,7 +113,7 @@ for(prop in pisteObj){
 		// comparer la valeur de l'attribut class avec la propriété de l'obj
 		if (prop == classe) {
 			console.log('yes cette propriété et cette classe correspondent');
-			console.log("valeur de la prop ", prop , " et de  ", classe), 'est', pisteObj.prop;
+			console.log("valeur de la prop ", prop , " et de  ", classe), 'est', pisteObj(prop);
 		};
 	};
 	// propTab.push(prop);
