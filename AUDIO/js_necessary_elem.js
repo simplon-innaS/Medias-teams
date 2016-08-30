@@ -105,25 +105,29 @@ console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
 for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 	pisteObj =PlayList[cpt];
 	console.log(pisteObj);
+
 	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
 	prop = pisteOwnProp[cpt];
 	console.log("tab prop =", prop);
 
 	// récupérer le TagName HTML qui correspond à la propriété Playliste
-	var tagLi = document.getElementsByClassName(prop);
-	console.log(tagLi);
-	for (var i = 0; i < PlayList.length - 1; i++) {
+
+	//console.log(tagLi);
+	for (var i = 0; i < PlayList.length - 1, i < tagAudio.length; i++) {
+		pisteObj=  PlayList[i];
+		var tagLi = document.getElementsByClassName(prop);
+		console.log('reucpérer li', tagLi);
+		classe = tagLi[i].getAttribute('class');
+		console.log("valeur de la prop ", prop , " et de class '", classe, "' est'", pisteObj[prop]);
 		// récupérer la valeur de l'attribut du LI
-		var classe = tagLi[i].getAttribute('class');
-		console.log(classe);
+		classe.innerHtml = pisteObj[prop];
 		// comparer la valeur de l'attribut class avec la propriété de l'obj
-		if (prop == classe && prop ) {
-			console.log('yes cette propriété et cette classe correspondent');
-			console.log("valeur de la prop ", prop , " et de  ", classe, 'est', pisteOwnProp.prop);
-			
+		if (prop == classe ) {
+			console.log('ENTRE',pisteObj[prop]);
+			tagLi[i].innerHtml = pisteObj[prop];
+
 		};
 	};
-	console.log("tab prop =", prop);
 	// propTab.push(prop);
 	//console.log(propTab);
 }
