@@ -3,10 +3,10 @@
 	<head>
 	<meta charset="utf-8">
 	<title>Player One By One</title>
-	<style media="screen">
+	<style>
 		.player-container {height: auto;}
 		.player-container img{height: 150px;}
-		.musiclist li{
+		.container-musiclist li{
 			display: block;
 			list-style: none;
 			padding: 0 5px;
@@ -17,14 +17,14 @@
 	</style>
 	<head>
 	<body>
-		<div class="musiclist">
+		<div class="container-musiclist">
 			<!-- informations about song -->
 			<!-- first player -->
 			<ul class="player-container" id="p-1">
 				<li><img src="./img/neededme.jpg"></li>
-				<li class="title">title </li>
-				<li class="album">album  </li>
-				<li class="artist">artiste </li>
+				<li class="title">title</li>
+				<li class="album">album</li>
+				<li class="artist">artiste</li>
 				<!--  <li id="temps">time <span>00:00</span> </li>-->
 				<li class="controlers">
 					<form class="btns" method="get" onsubmit="playRandom(); return false"></form>
@@ -34,7 +34,6 @@
 					<audio class="track" src="./mp3/neededme.mp3" type="audio/mpeg" controls></audio>
 				</li>
 			</ul>
-
 			<!-- second player -->
 			<ul class="player-container" id="p-2">
 				<li><img src="./img/neededme.jpg"></li>
@@ -50,7 +49,6 @@
 					<audio class="track" src="./mp3/neededme.mp3" type="audio/mpeg" controls></audio>
 				</li>
 			</ul>
-
 			<!-- third player -->
 			<ul class="player-container" id="p-3">
 				<li><img src="./img/neededme.jpg"></li>
@@ -67,6 +65,7 @@
 				</li>
 			</ul>
 		</div>
+
 		<script type="text/javascript" src="./js_necessary_elem.js"></script>
 	</body>
 </html>

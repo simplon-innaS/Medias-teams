@@ -1,34 +1,11 @@
-
-/***** STRUCTURE D'UN PLAYER TYPE *******/
-// <!-- first player -->
-//       <ul class="player-container" id="p-1">
-//         <li><img src="./img/neededme.jpg"></li>
-//         <li class="title">title </li>
-//         <li class="album">album  </li>
-//         <li class="artist">artist </li>
-//         <!--  <li id="temps">time <span>00:00</span> </li>-->
-//         <li class="controlers">
-//           <form class="btns" method="get" onsubmit="playRandom(); return false"></form>
-//         </li>
-//         <!-- player default -->
-//         <li class="media_player">
-//           <audio class="track" src="./neededme.mp3" type="audio/mpeg" controls></audio>
-//         </li> 
-//       </ul>
-// <!-- end of first player -->
-
 // >> RECUPERER LA VALEUR DU LECTEUR DEFAULT DABORD
-
-
-
-
 // tableau des données piste
 var PlayList = [
-{track: 1, artist: "Rihanna", album: "Anti", title:"Needed Me", src: "./mp3/neededme.mp3", imgsrc: "./img/neededme.jpg" }, // 0
-{track: 2, artist: "Young Money", /*album: "Rise Of An Empire",*/ title:"Senile", src: "./mp3/senile.mp3", imgsrc: "./img/senile.jpg" } , // 1
-{track: 3, artist: "Rihanna", album: "Good Girl Gone Bad", title:"Rehab", src: "./mp3/rehab.mp3", imgsrc: "./img/rehab.jpg" }, // 2
-{track: 4, artist: "Bjork", album: "Homogenic", title:"Joga", src: "./mp3/joga.mp3", imgsrc: "./img/joga.jpg" }, // 3
-{track: 5, artist: "Yemi Alade", album: "King of Queens", title:"Johnny", src: "./mp3/johnny.mp3", imgsrc: "./img/johnny.jpg" },// 4
+	{track: 1, artist: "Rihanna", album: "Anti", title:"Needed Me", src: "./mp3/neededme.mp3", imgsrc: "./img/neededme.jpg" }, // 0
+	{track: 2, artist: "Young Money", /*album: "Rise Of An Empire",*/ title:"Senile", src: "./mp3/senile.mp3", imgsrc: "./img/senile.jpg" } , // 1
+	{track: 3, artist: "Rihanna", album: "Good Girl Gone Bad", title:"Rehab", src: "./mp3/rehab.mp3", imgsrc: "./img/rehab.jpg" }, // 2
+	{track: 4, artist: "Bjork", album: "Homogenic", title:"Joga", src: "./mp3/joga.mp3", imgsrc: "./img/joga.jpg" }, // 3
+	{track: 5, artist: "Yemi Alade", album: "King of Queens", title:"Johnny", src: "./mp3/johnny.mp3", imgsrc: "./img/johnny.jpg" },// 4
 ];
 
 console.log("\nINSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
@@ -41,32 +18,48 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length; p++) {
 	var piste = PlayList[p].src; // source
 	var hOp = PlayList[p].hasOwnProperty('album'); // FALSE pour SENILE vérifie l'existence d'une propriété
 	console.log("var piste => numero ", p, piste, "\npiste Objet =>",pisteObj, hOp);
-	/// remplacer la piste
-	tagAudio[p].setAttribute('src', piste);
+	//	for (var cpt = 0; cpt < pisteObj.length; cpt++) {
+	//		pisteObj = PlayList[cpt];
+	var pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
+	for (var i = 0; i < pisteOwnProp.length; i++) {
+		var prop = pisteOwnProp[i];
+		console.log(pisteOwnProp[i]);
 
-	//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
-	console.log("piste ", p,"----", piste ,"----------------- Loop ", p+1);
+	}
+	//var li = document.getElementsByTagName('li');
+	//console.log(li);
+	/*for (var i = 0; i < pisteObj.length; i++) {
+	classe = getElementsByClassName(pisteOwnProp[i]);
+	console.log(classe);
+
+.li
+}*/
+for(var classe in pisteObj){
+	var values = pisteObj[classe];
+	console.log("classe ==>", classe, values);
+	if (classe == prop) {
+		console.log("yes");
+		var tag = document.getElementsByClassName(classe);
+		console.log(tag);
+	}
+
+}
+//	var classe = document.getElementsByClassName(prop);
+//		console.log(classe);
+
+//	for(i = 0; i < pisteObj.length, i < classe.length; i++){
+//		console.log("class ==>", classe);
+//		classe[i].innerHTML = value;
+//	}
+
+
+
+tagAudio[p].setAttribute('src', piste);
+
+//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
+console.log("piste ", p,"----", piste ,"----------------- Loop ", p+1);
+
 };
-
-
-
-//parcourir la playlist et insérer petit à petit
-// for (var r = 0 ; r < tagAudio.length ; r++){
-// 	var replace = PlayList[r].src;
-// // SUPPRIMER du tableauP "PlayList" la 'piste'
-// console.log(replace);
-// tagAudio[r].setAttribute('src', replace);
-// console.log(PlayList.splice(0,1, replace));
-// console.log("piste ", r,"----", replace ,"----------------- Loop ", r+1);
-// //replace.eventListner('onplay', ftOnPlay)
-// };
-
-
-// PASSER à une autre video:
-// Quand la piste est finie (piste.ended)
-// je charge l'autre piste piste(i+1).load() 
-
-
 
 
 // RECUPERER UN CONTAINER-PLAYER PAR ID
@@ -94,39 +87,56 @@ var controlers = document.getElementsByClassName('controlers')[0].getAttribute('
 */
 
 // recuperer tous les propriété du tableau d'objet
-console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
-//var propTab = []
-// for(var prop in pisteObj){
-// 	console.log("propriété ==>", prop);
-// };
-	
-	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
-	console.log(pisteOwnProp);
-for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
-	pisteObj =PlayList[cpt];
-	console.log(pisteObj);
-	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
-	prop = pisteOwnProp[cpt];
-	console.log("tab prop =", prop);
 
-	// récupérer le TagName HTML qui correspond à la propriété Playliste
-	var tagLi = document.getElementsByClassName(prop);
-	console.log(tagLi);
-	for (var i = 0; i < PlayList.length - 1; i++) {
-		// récupérer la valeur de l'attribut du LI
-		var classe = tagLi[i].getAttribute('class');
-		console.log(classe);
-		// comparer la valeur de l'attribut class avec la propriété de l'obj
-		if (prop == classe && prop ) {
-			console.log('yes cette propriété et cette classe correspondent');
-			console.log("valeur de la prop ", prop , " et de  ", classe, 'est', pisteOwnProp.prop);
-			
-		};
-	};
-	console.log("tab prop =", prop);
-	// propTab.push(prop);
-	//console.log(propTab);
+
+// test de l'existence de l'objet + afficher le conbtenu de la prop
+
+for (var i = PlayList[0]; i < PlayList.length; i++) {
+	var pisteObj =  i;
+	console.log(pisteObj);
+	for(var prop in pisteObj){
+		console.log("propriété ==>", prop, pisteObj[prop]);
+	}
 }
+
+
+/*
+console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
+// pisteObj =  PlayList[0];
+pisteObjProp = PlayList;
+//var propTab = []
+for(var prop in pisteObj){
+console.log("propriété ==>", prop, pisteObj[prop]);
+};
+
+pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
+
+console.log(pisteOwnProp);
+for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
+pisteObj =PlayList[cpt];
+console.log(pisteObj);
+pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
+prop = pisteOwnProp[cpt];
+console.log("tab prop =", prop);
+
+// récupérer le TagName HTML qui correspond à la propriété Playliste
+var tagLi = document.getElementsByClassName(prop);
+console.log(tagLi);
+for (var i = 0; i < PlayList.length - 1; i++) {
+// récupérer la valeur de l'attribut du LI
+var classe = tagLi[i].getAttribute('class');
+console.log(classe);
+// comparer la valeur de l'attribut class avec la propriété de l'obj
+if (prop == classe && prop ) {
+console.log('yes cette propriété et cette classe correspondent');
+console.log("valeur de la prop ", prop , " et de  ", classe, 'est', pisteOwnProp.prop);
+
+};
+};
+console.log("tab prop =", prop);
+// propTab.push(prop);
+//console.log(propTab);
+}*/
 /*
 var classTab =  propTab;
 console.log("classTab =>",classTab);
