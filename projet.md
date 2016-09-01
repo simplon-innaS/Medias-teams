@@ -2,7 +2,7 @@
 ## Méthodes utiles
 ### VIDEO
 * **Video Object**  
-L'Object Video est récent en HTML5. Il représente le tag audio.  
+L'Object Video est récent en HTML5. Il représente le tag `<video>`.  
 Comme il est récent, il n'est pas reconnu par IE8 et les version anterieures.  
 On peut accéder à `<video>` en utilisant `getElementById()` :  
 ``` javascript
@@ -22,10 +22,13 @@ Enfin, on peut créer des évenements dans la DOM pour écouter, faire pause etc
 
 * **play()**
 [description](http://www.w3schools.com/tags/av_met_play.asp), [exemple](http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_av_met_play_pause)  
-La méthode play() permtet de commencer la lecture du fichier audio ou video.  
-On peut utiliser la méthode pause() pour marquer un temps d'arrêt.
+La méthode ```play()``` permtet de commencer la lecture du fichier audio ou video.  
+On peut utiliser la méthode ```pause()``` pour marquer un temps d'arrêt.
 
-
+* **pause()**
+[description](http://www.w3schools.com/tags/av_met_pause.asp)
+[exemple](http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_av_met_play_pause)
+La méthode ```pause()``` interromp la lecture audio ou video en cours.
 
 ## AUDIO
 * **Audio Object**  
@@ -43,8 +46,8 @@ Pour plus d'infos sur les propriétés et les méthodes de cet Objet : [Infos](h
 
 * **play()**
 [description](http://www.w3schools.com/tags/av_met_play.asp), [exemple](http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_av_met_play_pause)    
-La méthode play() permtet de commencer la lecture du fichier audio ou video.  
-On peut utiliser la méthode pause() pour marquer un temps d'arrêt.  
+La méthode ```play()``` permtet de commencer la lecture du fichier audio ou video.  
+On peut utiliser la méthode ```pause()``` pour marquer un temps d'arrêt.  
 
 ## Propriétés utiles
 ### VIDEO & AUDIO
@@ -57,6 +60,7 @@ var vid = document.getElementById("myVideo");
 vid.autoplay = true;
 vid.load();
 ```  
+Définir ```false``` si on ne veut pas que la piste audio ou vidéo ne se lance dès le chargement de la page.
 * **buffered**  
 Met en mémoire tampon la première partie de la vidéo en secondes.  
 ```javascript
@@ -98,4 +102,10 @@ Renvoie le volume actuel du média
 ```javascript
 var vid = document.getElementById("myVideo");
 vid.volume = 0.2;
+```
+* **muted**
+Permet de mettre en sourdine la piste audio ou vidéo.
+```javascript
+var vid = document.getElementById("video1");
+vid.muted = true;
 ```
