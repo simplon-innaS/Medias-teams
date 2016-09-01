@@ -33,33 +33,43 @@ var PlayList = [
 
 console.log("\nINSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
 //parcourr la playlist et insérer petit à petit
-var tagAudio = document.getElementsByTagName('audio') ;
+var tagAudio = document.getElementsByTagName('audio');
+var tagImg = document.getElementsByTagName('img');
+
+// écrire du texte dans les différents balbutiements
+  function setText(el,propriete) {
+    el.innerHTML = propriete;
+  }
 // PISTES DE MA PLAYLST ==
-for (var p = 0; p < PlayList.length, p < tagAudio.length; p++) {
+for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++) {
 	// parourir le tableau de piste
 	var pisteObj = PlayList[p]; // objet complet
 	var piste = PlayList[p].src; // source
+	var image = PlayList[p].imgsrc;
 	var hOp = PlayList[p].hasOwnProperty('album'); // FALSE pour SENILE vérifie l'existence d'une propriété
 	console.log("var piste => numero ", p, piste, "\npiste Objet =>",pisteObj, hOp);
 	/// remplacer la piste
-	tagAudio[p].setAttribute('src', piste);
+	tagImg[p].setAttribute('src', image);
+	//removedImg = pisteObj.splice(image, 1);
 
+	tagAudio[p].setAttribute('src', piste);
+	//removedAudio = PlayList[p].splice(piste, 1);
 	//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
-	console.log("piste ", p,"----", piste ,"----------------- Loop ", p+1);
+	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 };
 
 
 
 //parcourir la playlist et insérer petit à petit
-// for (var r = 0 ; r < tagAudio.length ; r++){
-// 	var replace = PlayList[r].src;
-// // SUPPRIMER du tableauP "PlayList" la 'piste'
-// console.log(replace);
-// tagAudio[r].setAttribute('src', replace);
-// console.log(PlayList.splice(0,1, replace));
-// console.log("piste ", r,"----", replace ,"----------------- Loop ", r+1);
-// //replace.eventListner('onplay', ftOnPlay)
-// };
+for (var r = 0 ; r < tagAudio.length ; r++){
+	var replace = PlayList[r].src;
+// SUPPRIMER du tableauP "PlayList" la 'piste'
+console.log(replace);
+tagAudio[r].setAttribute('src', replace);
+console.log(PlayList.splice(0,1, replace));
+console.log("piste ", r,"----", replace ,"----------------- Loop ", r+1);
+//replace.eventListner('onplay', ftOnPlay)
+};
 
 
 // PASSER à une autre video:
@@ -120,11 +130,17 @@ for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 		classe = tagLi[i].getAttribute('class');
 		console.log("valeur de la prop ", prop , " et de class '", classe, "' est'", pisteObj[prop]);
 		// récupérer la valeur de l'attribut du LI
+		
 		classe.innerHtml = pisteObj[prop];
 		// comparer la valeur de l'attribut class avec la propriété de l'obj
 		if (prop == classe ) {
+
+			setText(tagLi, pisteObj[prop]);
 			console.log('ENTRE',pisteObj[prop]);
-			tagLi[i].innerHtml = pisteObj[prop];
+			tagLi[i];
+
+		delete pisteObj[prop];
+		console.log(pisteObj);
 
 		};
 	};
