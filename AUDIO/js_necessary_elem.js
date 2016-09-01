@@ -23,7 +23,7 @@
 
 
 // tableau des données piste
-var PlayList = [
+var PlayLists = [
 {track: 1, artist: "Rihanna", album: "Anti", title:"Needed Me", src: "./mp3/neededme.mp3", imgsrc: "./img/neededme.jpg" }, // 0
 {track: 2, artist: "Young Money", /*album: "Rise Of An Empire",*/ title:"Senile", src: "./mp3/senile.mp3", imgsrc: "./img/senile.jpg" } , // 1
 {track: 3, artist: "Rihanna", album: "Good Girl Gone Bad", title:"Rehab", src: "./mp3/rehab.mp3", imgsrc: "./img/rehab.jpg" }, // 2
@@ -41,20 +41,22 @@ var tagImg = document.getElementsByTagName('img');
     el.innerHTML = propriete;
   }
 // PISTES DE MA PLAYLST ==
-for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++) {
+for (var p = 0; p < PlayLists.length, p < tagAudio.length, p < tagImg.length; p++) {
 	// parourir le tableau de piste
-	var pisteObj = PlayList[p]; // objet complet
-	var piste = PlayList[p].src; // source
-	var image = PlayList[p].imgsrc;
-	var hOp = PlayList[p].hasOwnProperty('album'); // FALSE pour SENILE vérifie l'existence d'une propriété
+	var pisteObj = PlayLists[p]; // objet complet
+	var piste = PlayLists[p].src; // source
+	var image = PlayLists[p].imgsrc; // img
+	var hOp = PlayLists[p].hasOwnProperty('album'); // FALSE pour SENILE vérifie l'existence d'une propriété
 	console.log("var piste => numero ", p, piste, "\npiste Objet =>",pisteObj, hOp);
 	/// remplacer la piste
 	tagImg[p].setAttribute('src', image);
-	//removedImg = pisteObj.splice(image, 1);
-
+	//var removedImg = PlayLists.splice(4, 1, image);
+//  console.log(removedImg);
+  delete image[p];
+  console.log("après supp pisteObj= ", pisteObj);
 	tagAudio[p].setAttribute('src', piste);
-	//removedAudio = PlayList[p].splice(piste, 1);
-	//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
+	//var removedAudio = PlayLists.splice(piste, 1);
+	//console.log("piste supprimée: ", PlayLists.splice(0,1, piste));
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 };
 
@@ -62,11 +64,11 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 
 //parcourir la playlist et insérer petit à petit
 for (var r = 0 ; r < tagAudio.length ; r++){
-	var replace = PlayList[r].src;
-// SUPPRIMER du tableauP "PlayList" la 'piste'
+	var replace = PlayLists[r].src;
+// SUPPRIMER du tableauP "PlayLists" la 'piste'
 console.log(replace);
 tagAudio[r].setAttribute('src', replace);
-console.log(PlayList.splice(0,1, replace));
+console.log(PlayLists.splice(0,1, replace));
 console.log("piste ", r,"----", replace ,"----------------- Loop ", r+1);
 //replace.eventListner('onplay', ftOnPlay)
 };
@@ -84,25 +86,6 @@ var containerPlayerId = document.getElementById('p-1');
 // RECUPERER UN CONTAINER-PLAYER PAR class
 var containerPlayerClass = document.getElementsByClassName('p-1')[0];
 
-
-
-/*
-// RECUPERER UNE CLASS DANS UN CONTAINER-PLAYER
-//Sinon, puisqu'il y a plusieurs éléments (getElementsByClassName), un Array est renvoyé :
-//il faut donc lui spécifier un indice entre crochet :
-//var haut_gauche = document.getElementsByClassName("haut_gauche")[0];
-var track = document.getElementsByClassName('track')[0];
-var title = document.getElementsByClassName('title')[0];
-var album = document.getElementsByClassName('album')[0];
-var artist = document.getElementsByClassName('artist')[0];
-var controlers = document.getElementsByClassName('controlers')[0].getAttribute('src');
-
-//Ensuite, il faut passer par la méthode setAttribute() pour créer un attribut
-//(dans ce cas, c'est l'attribut class).
-// haut_gauche.setAttribute('class', 'haut_gauche');
-// haut_gauche.setAttribute('className', 'haut_gauche'); // pour IE
-*/
-
 // recuperer tous les propriété du tableau d'objet
 console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
 //var propTab = []
@@ -113,7 +96,7 @@ console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
 	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
 	console.log(pisteOwnProp);
 for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
-	pisteObj =PlayList[cpt];
+	pisteObj =PlayLists[cpt];
 	console.log(pisteObj);
 
 	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
@@ -123,21 +106,17 @@ for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 	// récupérer le TagName HTML qui correspond à la propriété Playliste
 
 	//console.log(tagLi);
-	for (var i = 0; i < PlayList.length - 1, i < tagAudio.length; i++) {
-		pisteObj=  PlayList[i];
+	for (var i = 0; i < PlayLists.length - 1, i < tagAudio.length; i++) {
+		pisteObj=  PlayLists[i];
 		var tagLi = document.getElementsByClassName(prop);
-		console.log('reucpérer li', tagLi);
+    console.log(tagLi, prop);
+		console.log('reucpérer li', tagLi.length, PlayLists.length - 1, tagAudio.length);
 		classe = tagLi[i].getAttribute('class');
 		console.log("valeur de la prop ", prop , " et de class '", classe, "' est'", pisteObj[prop]);
 		// récupérer la valeur de l'attribut du LI
-		
+
 		classe.innerHtml = pisteObj[prop];
 		// comparer la valeur de l'attribut class avec la propriété de l'obj
-<<<<<<< HEAD
-		if (prop == classe && prop ) {
-			console.log('yes cette propriété et cette classe correspondent');
-			console.log("valeur de la prop ", prop , " et de  ", classe, 'est', pisteOwnProp.prop);
-=======
 		if (prop == classe ) {
 
 			setText(tagLi, pisteObj[prop]);
@@ -145,14 +124,13 @@ for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 			tagLi[i];
 
 		delete pisteObj[prop];
-		console.log(pisteObj);
->>>>>>> ce67a91ecb430a2899d10dee94fe7167de724691
-
+		console.log(pisteObj[prop]);
 		};
 	};
 	// propTab.push(prop);
 	//console.log(propTab);
 }
+
 /*
 var classTab =  propTab;
 console.log("classTab =>",classTab);
@@ -160,6 +138,6 @@ console.log("classTab =>",classTab);
 var track = document.getElementsByClassName(prop);
 console.log("CE QUE JE DOIS REMPLACER POUR CE TABLEAU",'\n', '=> attribut SRC:', track);
 // pour comparer il faut vérifier l'existance d'un des attribut
-//	var hOp = PlayList[p].hasOwnProperty('PROPERTY');
+//	var hOp = PlayLists[p].hasOwnProperty('PROPERTY');
 // comparer la classe avec un element html
 */
