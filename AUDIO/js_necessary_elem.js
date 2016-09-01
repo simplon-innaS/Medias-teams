@@ -13,7 +13,7 @@
 //         <!-- player default -->
 //         <li class="media_player">
 //           <audio class="track" src="./neededme.mp3" type="audio/mpeg" controls></audio>
-//         </li> 
+//         </li>
 //       </ul>
 // <!-- end of first player -->
 
@@ -64,7 +64,7 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length; p++) {
 
 // PASSER à une autre video:
 // Quand la piste est finie (piste.ended)
-// je charge l'autre piste piste(i+1).load() 
+// je charge l'autre piste piste(i+1).load()
 
 
 
@@ -99,7 +99,7 @@ console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
 // for(var prop in pisteObj){
 // 	console.log("propriété ==>", prop);
 // };
-	
+
 	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
 	console.log(pisteOwnProp);
 for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
@@ -120,7 +120,7 @@ for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 		if (prop == classe && prop ) {
 			console.log('yes cette propriété et cette classe correspondent');
 			console.log("valeur de la prop ", prop , " et de  ", classe, 'est', pisteOwnProp.prop);
-			
+
 		};
 	};
 	console.log("tab prop =", prop);
