@@ -1,22 +1,3 @@
-
-/***** STRUCTURE D'UN PLAYER TYPE *******/
-// <!-- first player -->
-//       <ul class="player-container" id="p-1">
-//         <li><img src="./img/neededme.jpg"></li>
-//         <li class="title">title </li>
-//         <li class="album">album  </li>
-//         <li class="artist">artist </li>
-//         <!--  <li id="temps">time <span>00:00</span> </li>-->
-//         <li class="controlers">
-//           <form class="btns" method="get" onsubmit="playRandom(); return false"></form>
-//         </li>
-//         <!-- player default -->
-//         <li class="media_player">
-//           <audio class="track" src="./neededme.mp3" type="audio/mpeg" controls></audio>
-//         </li> 
-//       </ul>
-// <!-- end of first player -->
-
 // >> RECUPERER LA VALEUR DU LECTEUR DEFAULT DABORD
 
 
@@ -56,6 +37,7 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 	//removedAudio = PlayList[p].splice(piste, 1);
 	//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
+	getElementsByTagName('li').value;
 };
 
 
@@ -67,7 +49,7 @@ for (var r = 0 ; r < tagAudio.length ; r++){
 console.log(replace);
 tagAudio[r].setAttribute('src', replace);
 console.log(PlayList.splice(0,1, replace));
-console.log("piste ", r,"----", replace ,"----------------- Loop ", r+1);
+console.log("piste ", r,"----", replace ,"------ ----------- Loop ", r+1);
 //replace.eventListner('onplay', ftOnPlay)
 };
 
