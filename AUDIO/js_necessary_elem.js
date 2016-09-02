@@ -36,9 +36,16 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 	delete PlayList[p].imgsrc;
 	console.log("TAG image",pisteObj);
 
+
+
+// METTRE LA SUPPRESSION DE TAG AUDIO A LFIN DU CODE POUR NE PAS AVOIR
+// DE SOUCIS AUNIVEAU DE LA SUITE DU CODE;
 	tagAudio[p].setAttribute('src', piste);
 	//delete PlayList[p].src;
 	//console.log("TAG audio",pisteObj);
+
+
+
 
 	//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
@@ -64,7 +71,7 @@ console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
 	
 	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
 	console.log(pisteOwnProp);
-	
+
 for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 	pisteObj =PlayList[cpt];
 	console.log(pisteObj);
@@ -72,21 +79,31 @@ for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
 	prop = pisteOwnProp[cpt];
 	console.log("tab prop =", prop);
-
 	// récupérer le TagName HTML qui correspond à la propriété Playliste
 
 	//console.log(tagLi);
 	for (var i = 0; i < PlayList.length - 1, i < tagAudio.length; i++) {
 		pisteObj=  PlayList[i];
-		var tagLi = document.getElementsByClassName(prop);
-		console.log('reucpérer li', tagLi);
-		classe = tagLi[i].getAttribute('class');
+		var tagLi = document.getElementsByClassName(prop)[i];
+		console.log('RECUPERER li[i]', tagLi);
+		classe = tagLi.getAttribute('class');
+
+
+
+
+
 		console.log("valeur de la prop ", prop , " et de class '", classe, "' est'", pisteObj[prop]);
 		// récupérer la valeur de l'attribut du LI
 		
-		classe.innerHtml = pisteObj[prop];
-		// comparer la valeur de l'attribut class avec la propriété de l'obj
+
+		// ne m
+		// testarche pas >> classe.innerHtml = pisteObj[prop];
+
 		if (prop == classe ) {
+			tagLi.innerHtml = pisteObj[prop];
+			setText(document.getElementsByClassName(prop), pisteObj[prop]);
+		// comparer la valeur de l'attribut class avec la propriété de l'obj
+
 
 			setText(tagLi, pisteObj[prop]);
 			console.log('ENTRE',pisteObj[prop]);
