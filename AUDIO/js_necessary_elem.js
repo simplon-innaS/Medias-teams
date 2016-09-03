@@ -32,10 +32,14 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 	
 
 	/// remplacer la piste
-	tagImg[p].setAttribute('src', image);
-	delete PlayList[p].imgsrc;
-	console.log("TAG image",pisteObj);
-
+	//tagImg[p].setAttribute('src', image);
+	//delete PlayList[p].imgsrc;
+	//console.log("TAG image",pisteObj);
+	var pisteRandom = Math.floor(Math.random()*PlayList.length);
+	var srcRancom = PlayList[pisteRandom].src;
+	console.log('src random', srcRancom);
+	delete srcRancom;
+	console.log('supp src Random', PlayList[p]);
 
 
 // METTRE LA SUPPRESSION DE TAG AUDIO A LFIN DU CODE POUR NE PAS AVOIR
@@ -51,7 +55,7 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 	document.getElementsByTagName('li');
 };
-
+/*
 // PASSER à une autre video:
 // Quand la piste est finie (piste.ended)
 // je charge l'autre piste piste(i+1).load() 
@@ -117,6 +121,7 @@ for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
 	// propTab.push(prop);
 	//console.log(propTab);
 }
+*/
 /*
 var classTab =  propTab;
 console.log("classTab =>",classTab);
