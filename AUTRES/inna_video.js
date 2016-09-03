@@ -1,4 +1,4 @@
-var tagVideo = documet.getElementsByTagName('video');
+var tagVideo = document.getElementsByTagName('video');
 
 for (var v = 0; v < tableauVideos.length, v < tagVideo.length, v++) {
 	var videoRandom = Math.floor(Math.random()*PlayList.length);

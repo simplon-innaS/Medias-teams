@@ -37,7 +37,8 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 	//console.log("TAG image",pisteObj);
 	var pisteRandom = Math.floor(Math.random()*PlayList.length);
 	var srcRandom = PlayList[pisteRandom].src;
-	console.log('src random', srcRandom);
+	//console.log('src random', srcRandom);
+	tagImg[p].setAttribute('src', image);
 	delete srcRancom;
 	console.log('supp src Random', PlayList[p], srcRandom);
 
