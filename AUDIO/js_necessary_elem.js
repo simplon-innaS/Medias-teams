@@ -36,10 +36,10 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 	//delete PlayList[p].imgsrc;
 	//console.log("TAG image",pisteObj);
 	var pisteRandom = Math.floor(Math.random()*PlayList.length);
-	var srcRancom = PlayList[pisteRandom].src;
-	console.log('src random', srcRancom);
+	var srcRandom = PlayList[pisteRandom].src;
+	console.log('src random', srcRandom);
 	delete srcRancom;
-	console.log('supp src Random', PlayList[p]);
+	console.log('supp src Random', PlayList[p], srcRandom);
 
 
 // METTRE LA SUPPRESSION DE TAG AUDIO A LFIN DU CODE POUR NE PAS AVOIR
