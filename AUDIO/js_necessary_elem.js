@@ -15,21 +15,24 @@ var PlayList = [
 	{track: 8, artist: "Vanessa Da Mata", album: "Good Luck ft Ben Harper", title:"Boa Sorte", src: "./mp3/boasorte.mp3", imgsrc: "./img/.jpg" }, // 8
 	{track: 9, artist: "Rihanna", album: "Good Girl Gone Bad", title:"Rehab", src: "./mp3/rehab.mp3", imgsrc: "./img/rehab.jpg" },// 9
 	{track: 10, artist: "Oscar Chavez", album: "Desde Mexico Para Siempre Che", title:"Hasta Siempre Comandante Che Guevara", src: "./mp3/hastasiemprecomandantecheguevara.mp3", imgsrc: "./img/hastasiemprecomandantecheguevara.jpg" }, // 10
-];
+	];
 
-console.log("\nINSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
+	console.log("\n#1 INSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
 //parcourr la playlist et insérer petit à petit
 var tagAudio = document.getElementsByTagName('audio');
 var tagImg = document.getElementsByTagName('img');
+
 // écrire du texte dans les différents balbutiements
-  function setText(el,text) {
-    el.innerHTML = text;
-  }
+var text;
+function setText(el,text){
+	el.innerHTML = text;
+}
+
 
 // PISTES DE MA PLAYLST == et suppression de l'index
-randomOneByOne();
-function randomOneByOne(){
-for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++) {
+insertProp();
+function insertProp(){
+	for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++) {
 	// parourir le tableau de piste
 	var pisteObj = PlayList[p]; // objet complet
 	var piste = PlayList[p].src; // source
@@ -39,94 +42,43 @@ for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++
 	
 	/// remplacer l'image de la piste
 	/// /!\ si l'on veut une playliste alléatoire mettre le code de pist_random.js
+	console.log("\n#A INSERER LA JACKET DE L'ALBUM :", image);
 	tagImg[p].setAttribute('src', image);
 	delete PlayList[p].imgsrc;
-	console.log("TAG IMAGE après supression OK",pisteObj);
+	console.log("TAG IMAGE après supression OK :",pisteObj);
 
-
-	setText()
-	// METTRE LA SUPPRESSION DE TAG AUDIO A LFIN DU CODE POUR NE PAS AVOIR
-	// DE SOUCIS AUNIVEAU DE LA SUITE DU CODE;
+	console.log("\n#B INSERER LA SOURCE DE L'AUDIO", piste);
 	tagAudio[p].setAttribute('src', piste);
 	delete PlayList[p].src;
 	console.log("TAG AUDIO après suppression OK",pisteObj);
 
-	//console.log("piste supprimée: ", PlayList.splice(0,1, piste));
+	// recuperer tous les propriété du tableau d'objet
+	console.log("\n# PROPRIETE DU TABLEAU D'OBJET PISTE");
+	var props ="";
+	for (prop in pisteObj){
+		props += prop +  " => " + pisteObj[prop] + "\n"; 
+		console.log(props);
+		var tagLiClass = document.getElementsByClassName(prop)[p];
+		if (tagLiClass !== undefined|| tagLiClass !== null ) {
+			console.log('RECUPERER la classe de LI équivalent à la propriété', tagLiClass);
+			classe = tagLiClass.getAttribute('class');
+			console.log(classe, " est un ",typeof(classe)) ;
+			setText(tagLiClass, pisteObj[prop]);
+		};
+	};
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 	document.getElementsByTagName('li');
-};
+	};
 };
 
 // PASSER à une autre video:
 // Quand la piste est finie (piste.ended)
 // je charge l'autre piste piste(i+1).load() 
 
+tagAudio.onended = function(){ alert('yes'); }
+
+
 // RECUPERER UN CONTAINER-PLAYER PAR ID
 var containerPlayerId = document.getElementById('p-1');
 // RECUPERER UN CONTAINER-PLAYER PAR class
-var containerPlayerClass = document.getElementsByClassName('p-1')[0];
-
-// recuperer tous les propriété du tableau d'objet
-console.log("\nPROPRIETE DU TABLEAU D'OBJET PISTE");
-//METHOD #1 avec le 'for in  '
-//var propTab = []
-// for(var prop in pisteObj){
-// 	console.log("propriété ==>", prop);
-// };
-	
-	pisteOwnProp = Object.getOwnPropertyNames(pisteObj);
-	console.log(pisteOwnProp);
-
-for (var cpt = 0; cpt < pisteOwnProp.length; cpt++) {
-	pisteObj =PlayList[cpt];
-	console.log(pisteObj);
-
-	pisteOwnProp= Object.getOwnPropertyNames(pisteObj);
-	prop = pisteOwnProp[cpt];
-	console.log("tab prop =", prop);
-	// récupérer le TagName HTML qui correspond à la propriété Playliste
-
-	//console.log(tagLi);
-	for (var i = 0; i < PlayList.length - 1, i < tagAudio.length; i++) {
-		pisteObj=  PlayList[i];
-		var tagLi = document.getElementsByClassName(prop)[i];
-		console.log('RECUPERER li[i]', tagLi);
-		classe = tagLi.getAttribute('class');
-
-
-		console.log("valeur de la prop ", prop , " et de class '", classe, "' est'", pisteObj[prop]);
-		// récupérer la valeur de l'attribut du LI
-		
-
-		// ne m
-		// testarche pas >> classe.innerHtml = pisteObj[prop];
-
-		if (prop == classe ) {
-			tagLi.innerHtml = pisteObj[prop];
-			setText(document.getElementsByClassName(prop), pisteObj[prop]);
-		// comparer la valeur de l'attribut class avec la propriété de l'obj
-
-
-			setText(tagLi, pisteObj[prop]);
-			console.log('ENTRE',pisteObj[prop]);
-			tagLi[i];
-
-		delete pisteObj[prop];
-		console.log(pisteObj);
-
-		};
-	};
-	// propTab.push(prop);
-	//console.log(propTab);
-}
-
-/*
-var classTab =  propTab;
-console.log("classTab =>",classTab);
-
-var track = document.getElementsByClassName(prop);
-console.log("CE QUE JE DOIS REMPLACER POUR CE TABLEAU",'\n', '=> attribut SRC:', track);
-// pour comparer il faut vérifier l'existance d'un des attribut
-//	var hOp = PlayList[p].hasOwnProperty('PROPERTY');
-// comparer la classe avec un element html
-*/
+var containerPlayerClass = document.getElementsByClassName('p-1')[0];''
