@@ -1,8 +1,4 @@
 // >> RECUPERER LA VALEUR DU LECTEUR DEFAULT DABORD
-
-
-
-
 // tableau des données piste
 var PlayList = [
 	{track: 1, artist: "Rihanna", album: "Anti", title:"Needed Me", src: "./mp3/neededme.mp3", imgsrc: "./img/neededme.jpg" }, // 0
@@ -11,8 +7,8 @@ var PlayList = [
 	{track: 4, artist: "Bjork", album: "Homogenic", title:"Joga", src: "./mp3/joga.mp3", imgsrc: "./img/joga.jpg" }, // 4
 	{track: 5, artist: "Yemi Alade", album: "King of Queens", title:"Johnny", src: "./mp3/johnny.mp3", imgsrc: "./img/johnny.jpg" },// 5
 	{track: 6, artist: "Midnite", album: "Unpolished", title:"Don't Move", src: "./mp3/dontmove.mp3", imgsrc: "./img/dontmove.jpg" }, // 6
-	{track: 7, artist: "Le Peuple De L'Herbe", album: "P.H Test/Two", title:"No Escape", src: "./mp3/noescape.mp3", imgsrc: "./img/.jpg" },// 7
-	{track: 8, artist: "Vanessa Da Mata", album: "Good Luck ft Ben Harper", title:"Boa Sorte", src: "./mp3/boasorte.mp3", imgsrc: "./img/.jpg" }, // 8
+	{track: 7, artist: "Le Peuple De L'Herbe", album: "P.H Test/Two", title:"No Escape", src: "./mp3/noescape.mp3", imgsrc: "./img/noescape.jpg" },// 7
+	{track: 8, artist: "Vanessa Da Mata", album: "Good Luck ft Ben Harper", title:"Boa Sorte", src: "./mp3/boasorte.mp3", imgsrc: "./img/boasorte.jpg" }, // 8
 	{track: 9, artist: "Rihanna", album: "Good Girl Gone Bad", title:"Rehab", src: "./mp3/rehab.mp3", imgsrc: "./img/rehab.jpg" },// 9
 	{track: 10, artist: "Oscar Chavez", album: "Desde Mexico Para Siempre Che", title:"Hasta Siempre Comandante Che Guevara", src: "./mp3/hastasiemprecomandantecheguevara.mp3", imgsrc: "./img/hastasiemprecomandantecheguevara.jpg" }, // 10
 	];
@@ -27,8 +23,6 @@ var text;
 function setText(el,text){
 	el.innerHTML = text;
 }
-
-
 // PISTES DE MA PLAYLST == et suppression de l'index
 insertProp();
 function insertProp(){
@@ -81,4 +75,5 @@ tagAudio.onended = function(){ alert('yes'); }
 // RECUPERER UN CONTAINER-PLAYER PAR ID
 var containerPlayerId = document.getElementById('p-1');
 // RECUPERER UN CONTAINER-PLAYER PAR class
-var containerPlayerClass = document.getElementsByClassName('p-1')[0];''
+var containerPlayerClass = document.getElementsByClassName('p-1')[0];
+
