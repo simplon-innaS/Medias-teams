@@ -59,22 +59,31 @@ function insertProp(){
 			console.log(classe, " est un ",typeof(classe)) ;
 			setText(tagLiClass, pisteObj[prop]);
 		};
-	};
+		console.log("piste pisteObj avant ended", pisteObj, tagAudio[p]);
+
+// ON PROGRESS
+		var audioEnded = tagAudio[p];
+		var audioNext = tagAudio[p].play();
+		console.log(audioNext)
+		audioEnded.addEventListener("ended", function(){
+			 audioEnded.ended;
+			console.log("ended", audioNext);
+			audioNext;
+	});
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 	document.getElementsByTagName('li');
 	};
 };
-
+};
 
 var controlers = document.getElementsByClassName('btns');
-    function vidplay() {
+function audioPlay() {
 		// création de Next
 	var playBtn = document.createElement('button');
 		playBtn.type = 'button';
 		playBtn.class = 'btn';
 		controlers.appendChild(playBtn);
 		setText(playBtn, ">");
-
        console.log(tagAudio);
        var button = document.getElementById("play");
        if (tagAudio.paused) {
@@ -85,7 +94,6 @@ var controlers = document.getElementsByClassName('btns');
           button.textContent = ">";
        }
     }
-
 // PASSER à une autre video:
 // Quand la piste est finie (piste.ended)
 // je charge l'autre piste piste(i+1).load()
