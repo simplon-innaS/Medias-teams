@@ -63,10 +63,12 @@ function insertProp(){
 
 // ON PROGRESS
 		var audioEnded = tagAudio[p];
-		var audioNext = tagAudio[p].play();
+		var audioNext = tagAudio[p] + p;
+
 		console.log(audioNext)
 		audioEnded.addEventListener("ended", function(){
-			 audioEnded.ended;
+			audioEnded.ended;
+			
 			console.log("ended", audioNext);
 			audioNext;
 	});
