@@ -1,3 +1,5 @@
+
+// a mettre à la place d
 var pisteRandom = Math.floor(Math.random()*PlayList.length);
 	var srcRandom = PlayList[pisteRandom].src;
 	var imgRandom = PlayList[pisteRandom].imgsrc;

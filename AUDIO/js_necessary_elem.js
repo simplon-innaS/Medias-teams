@@ -13,7 +13,7 @@ var PlayList = [
 	{track: 10, artist: "Oscar Chavez", album: "Desde Mexico Para Siempre Che", title:"Hasta Siempre Comandante Che Guevara", src: "./mp3/hastasiemprecomandantecheguevara.mp3", imgsrc: "./img/hastasiemprecomandantecheguevara.jpg" }, // 10
 	];
 
-	console.log("\n#1 INSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
+console.log("\n#1 INSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
 //parcourr la playlist et insérer petit à petit
 var tagAudio = document.getElementsByTagName('audio');
 var tagImg = document.getElementsByTagName('img');
@@ -64,6 +64,27 @@ function insertProp(){
 	document.getElementsByTagName('li');
 	};
 };
+
+
+var controlers = document.getElementsByClassName('btns');
+    function vidplay() {
+		// création de Next
+	var playBtn = document.createElement('button');
+		playBtn.type = 'button';
+		playBtn.class = 'btn';
+		controlers.appendChild(playBtn);
+		setText(playBtn, ">");
+
+       console.log(tagAudio);
+       var button = document.getElementById("play");
+       if (tagAudio.paused) {
+         tagAudio.play();
+          button.textContent = "||";
+       } else {
+         tagAudio.pause();
+          button.textContent = ">";
+       }
+    }
 
 // PASSER à une autre video:
 // Quand la piste est finie (piste.ended)
