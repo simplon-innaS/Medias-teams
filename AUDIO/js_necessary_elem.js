@@ -62,15 +62,38 @@ function insertProp(){
 		console.log("piste pisteObj avant ended", pisteObj, tagAudio[p]);
 
 // ON PROGRESS
-		var audioEnded = tagAudio[p];
-		var audioNext = tagAudio[p] + p;
+		var audioTrack = tagAudio[p];
+		p+1;
+		var audioNext = tagAudio[p +2] ;
 
-		console.log(audioNext)
-		audioEnded.addEventListener("ended", function(){
-			audioEnded.ended;
-			
+		console.log(audioTrack, audioNext);
+		audioTrack.addEventListener("ended", function(){
+			if(audioTrack < tagAudio.length) {
+				audioTrack += 1;
+				console.log(audioTrack);
+				audioNext;
+			}
+			else {
+			tagAudio[p].stop();
+			}
 			console.log("ended", audioNext);
 			audioNext;
+			// On démarre la lecture
+			audioTrack.load();
+			audioTrack.play();
+
+			// On passe à la musique suivante
+			document.getElementsByClassName('track').addEventListener("ended",function(){
+				if(tagAudio[p] < tagAudio.length) {
+					tagAudio[p] += 1;
+					loadSong(id);
+				}
+				else {
+					player.stop();
+				}
+			});
+
+
 	});
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 	document.getElementsByTagName('li');
