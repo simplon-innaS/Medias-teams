@@ -9,26 +9,31 @@
     <video class= "video0"></video>
 
     <script type="text/javascript">
-    var tableauVideo= [
+    var tableauVideos = [
     {id: 1, src: 'airbnb.mp4'},
     {id: 2, src: 'astronomyy.mp4'},
     {id: 3, src: 'rihannach.mp4'}
     ];
     function random(){
-      var videoHasard = tableauVideo[Math.floor(Math.random()*tableauVideo.length)].src;
+      var videoHasard = tableauVideos[Math.floor(Math.random()*tableauVideos.length)].src;
       var video = document.getElementsByClassName("video0")[0];
-      alert(videoHasard);
-      if (videoHasard == tableauVideo[0].src){
-        video.src = tableauVideo[0].src;
+      // alert(videoHasard);
+      if (videoHasard == tableauVideos[0].src){
+        video.src = tableauVideos[0].src;
         video.controls = "true";
-      } else if(videoHasard == tableauVideo[1].src){
-        video.src = tableauVideo[1].src;
+        tableauVideos.splice(0,1);
+      } else if(videoHasard == tableauVideos[1].src){
+        video.src = tableauVideos[1].src;
         video.controls="true";
+        tableauVideos.splice(1,1);
       }else{
-        video.src = tableauVideo[2].src;
+        video.src = tableauVideos[2].src;
         video.controls="true";
-      }
+        tableauVideos.splice(2,1);
     }
+    console.log(videoHasard)
+  }
+
     </script>
   </body>
 </html>

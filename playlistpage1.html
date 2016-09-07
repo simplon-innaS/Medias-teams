@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Playlist de la page 1</title>
+  </head>
+  <body>
+    <div class="contenu">
+      <button type="button" name="button" onclick="affiche();">Cliquez ici</button>
+      <button type="button" name="button" id='bouton'></button>
+      <div class="bloc-gauche">
+        <video class="video0"></video>
+      </div>
+
+      <div class="blocs-droite">
+        <div class="">
+          <img src="" alt="" />
+        </div>
+
+        <div class="">
+          <img src="" alt="" />
+        </div>
+      </div>
+
+    </div>
+    <script type="text/javascript">
+    function affiche(){
+    var tableauContenu = [
+    {imgSrc: 'calvinharris.jpg', videoSrc: 'calvinharris.mp4'},
+    {imgSrc: 'astronomyy.jpg', videoSrc: 'astronomyy.mp4'},
+    {imgSrc: 'rihannach.jpg',  videoSrc: 'rihannach.mp4'}
+  ];
+
+   var ri = Math.floor(Math.random()*tableauContenu.length);
+   var rs = tableauContenu.splice(ri, 1);
+
+  console.log(ri);
+  console.log(tableauContenu);
+  }
+    </script>
+  </body>
+</html>
