@@ -26,7 +26,7 @@ function setText(el,text){
 // PISTES DE MA PLAYLST == et suppression de l'index
 insertProp();
 function insertProp(){
-	for (var p = 0; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++) {
+	for (var p = 0 ; p < PlayList.length, p < tagAudio.length, p < tagImg.length; p++) {
 	// parourir le tableau de piste
 	var pisteObj = PlayList[p]; // objet complet
 	var piste = PlayList[p].src; // source
@@ -62,39 +62,27 @@ function insertProp(){
 		console.log("piste pisteObj avant ended", pisteObj, tagAudio[p]);
 
 // ON PROGRESS
-		var audioTrack = tagAudio[p];
-		p+1;
-		var audioNext = tagAudio[p +2] ;
 
-		console.log(audioTrack, audioNext);
-		audioTrack.addEventListener("ended", function(){
-			if(audioTrack < tagAudio.length) {
-				audioTrack += 1;
-				console.log(audioTrack);
-				audioNext;
-			}
-			else {
-			tagAudio[p].stop();
-			}
-			console.log("ended", audioNext);
-			audioNext;
-			// On démarre la lecture
-			audioTrack.load();
-			audioTrack.play();
-
-			// On passe à la musique suivante
-			document.getElementsByClassName('track').addEventListener("ended",function(){
-				if(tagAudio[p] < tagAudio.length) {
-					tagAudio[p] += 1;
-					loadSong(id);
-				}
-				else {
-					player.stop();
-				}
+		var t = 0;
+		// tagAudio = document.getElementsByTagName('audio');
+		while (t < tagAudio.length - 1){
+			var audioCurrent = tagAudio[t];
+			var audioNext = tagAudio[t +1] ;
+			console.log(audioCurrent, audioNext);
+			audioNext.load();
+			audioCurrent.addEventListener("ended", function(){
+				audioCurrent.currentTime = 0;
+				tagAudio[t +1].autoplay();
+				console.log('ended of',  audioCurrent,  audioNext);
 			});
+		t++;
+	}
+// end of on progress
 
 
-	});
+
+
+
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 	document.getElementsByTagName('li');
 	};
