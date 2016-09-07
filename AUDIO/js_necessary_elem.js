@@ -14,9 +14,9 @@ var PlayList = [
 	];
 
 console.log("\n#1 INSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
-//parcourr la playlist et insérer petit à petit
-var tagAudio = document.getElementsByTagName('audio');
-var tagImg = document.getElementsByTagName('img');
+//parcourir la playlist et insérer petit à petit
+var tagAudio = Array.from(document.getElementsByTagName('audio')); // Array.from transforme un Array-like en vrai tableau[]
+var tagImg = Array.from(document.getElementsByTagName('img'));
 
 // écrire du texte dans les différents balbutiements
 var text;
@@ -62,21 +62,21 @@ function insertProp(){
 		console.log("piste pisteObj avant ended", pisteObj, tagAudio[p]);
 
 // ON PROGRESS
+var currentSongIndex;
 
-		var t = 0;
-		// tagAudio = document.getElementsByTagName('audio');
-		while (t < tagAudio.length - 1){
-			var audioCurrent = tagAudio[t];
-			var audioNext = tagAudio[t +1] ;
-			console.log(audioCurrent, audioNext);
-			audioNext.load();
-			audioCurrent.addEventListener("ended", function(){
-				audioCurrent.currentTime = 0;
-				tagAudio[t +1].autoplay();
-				console.log('ended of',  audioCurrent,  audioNext);
-			});
-		t++;
-	}
+	for (var i = 0; i < tagAudio.length; i++) {
+		tagAudio[i].addEventListener("play", function(){
+			currentSongIndex = tagAudio.indexOf(this);
+		});
+		tagAudio[i].addEventListener("ended", function(){
+			tagAudio[currentSongIndex].currentTime = 0;
+				console.log(currentSongIndex);
+				var next = tagAudio[currentSongIndex + 1] ? tagAudio[currentSongIndex + 1] : tagAudio[0];
+				next.play();
+				console.log('pendant',tagAudio[i]);
+		});
+		console.log('apres',tagAudio[i]);
+}
 // end of on progress
 
 
