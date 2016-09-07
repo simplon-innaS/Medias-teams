@@ -252,13 +252,6 @@
 
   };
 
-
-
-
-
-
-
-
   /* -------------------------------------------------------------------------*/
   ///// LES DIFFERENTS ACTIONS DES btns
 
@@ -293,20 +286,14 @@
   }
   // fin de la musique
   playTrack.addEventListener('ended', finish);
+
   function finish() {
     playTrack.currentTime = 0;
     setText(playButton,"Play");
   }
-
-
-
   }
-
   //document.getElementById('track').style.display = "block";
   /*
-
-
-
   // METHODE DE COMPTAGE
   /// ou autre syntax ou il faut parser "i" en Number(i).
   console.log("test oF Elems")

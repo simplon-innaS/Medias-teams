@@ -78,11 +78,6 @@ var currentSongIndex;
 		console.log('apres',tagAudio[i]);
 }
 // end of on progress
-
-
-
-
-
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 	document.getElementsByTagName('li');
 	};
