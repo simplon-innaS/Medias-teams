@@ -198,9 +198,9 @@
   mediaPlayer.appendChild(volumeSlider);
   setText(volumeSlider, "volume");
   // paramétrer les attributs
-  function setAttributes(el, attrs) {
-    for(var key in attrs){
-      el.setAttribute(key, attrs[key]);
+  function setAttributes(el, attributes) {
+    for(var key in attributes){
+      el.setAttribute(key, attributes[key]);
     }
   };
   // attributs du curseur (souris) semblable muter()
