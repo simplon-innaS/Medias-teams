@@ -1,0 +1,12 @@
+gitignore
+
+#tous les fiches OSX
+*.DS_Store
+
+#fichier images non utilisés
+unUseImg/
+
+#fichier .txt et .sh
+# ces fichiers ne sont utiles que pour le tri de base
+*.sh
+*.txt
