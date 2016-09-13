@@ -1,0 +1,383 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: sans-serif;
+  font-size: 1.1vw;
+  overflow-x: hidden;
+}
+
+nav {
+  margin-right: 20%;
+}
+
+
+
+.fenetre1 {
+  position: relative;
+  top: 3510px;
+  left: 0% ;
+  display: inline-block;
+
+}
+.test {
+  position: absolute;
+  top: 3vw;
+  width: 12vw;
+  left: 11%;
+  height: 50px;
+  background-color: #402405;
+  border-radius: 3px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 50px #555;
+}
+.test:hover {
+  cursor: pointer;
+}
+.para-marginright {
+  text-align: left ;
+  margin-right: 18%;
+  margin-left: 3%;
+}
+
+.confirm {
+  color: black;
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-left: 18px;
+  top: 11px;
+  font-size: bold;
+  position: absolute;
+}
+
+
+
+
+.search {
+  position: absolute;
+  top: 2vw;
+  width: 200px;
+  left: 40vw;
+
+}
+
+.resultats {
+  left: 2000px;
+  position: absolute;
+  bottom: 0px;
+}
+
+#div2{ /* positionnement du menu */
+  height: 3.3vw;
+  width: 100%x;
+  text-align: 50px;
+  line-height: 30vh;
+  opacity: 1; /* écriture menu transparant */
+  margin-right: 7vw;
+  position: absolute;
+  z-index: 1000;
+  margin-right: 20vw;
+}
+
+#div ul{
+  float: right;
+  position: relative;
+}
+
+#div2 ul li{
+  display: inline;
+  list-style-type: none;
+  float: right;
+}
+
+#div2 ul li a{ /*menu : espace, sans surlignement, couleur*/
+  padding: 1.5vh;
+  text-decoration: none;
+  color: #5D4F0B;
+  display: inline;
+}
+
+#div2 ul li:hover{ /*Code couleur transition menu hover*/
+ /*A CHANGER ++++++++++++++++++++++++++++++++++++*/
+  transition: all 1s;
+}
+
+#background{
+  background: url(../img/Bioshock1.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 110vh;
+  position:absolute;
+}
+
+#background h1{
+  font-size: 12vh;
+  font-weight: 500;
+  text-align: center;
+  margin: 20vh;
+  color: #402405;
+  text-shadow: 1px 1px 5px ;
+}
+
+#separation1{
+  background: url(../img/Bioshock2.jpg) no-repeat center ;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60vh;
+  position:absolute;
+}
+
+#separation1-container {
+  position: absolute;
+  margin-top: 110vh;
+  height: 100vh;
+  width: 100%;
+}
+
+#para1{
+  background: url(../img/route.jpg) no-repeat center ;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 130vh;
+  position:absolute;
+}
+
+#para1-container {
+  position: absolute;
+  margin-top: 160vh;
+  height: 100vh;
+  width: 100%;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+#box1{
+  color:black;
+  width: 65vw;
+  height: 80vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: -10vh;
+  margin-left: 0vw;
+  text-align: center;
+  background: white;
+  box-shadow: 1px 1px 12px #555;
+  z-index: 300;
+}
+
+#p1p1{
+  text-align: justify;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+}
+
+#p-margin{
+  text-align: justify;
+  margin-left: 2vw;
+  margin-right: 13vw;
+  margin-bottom: 2vh;
+}
+
+#boxmusic{
+  color:white;
+  width: 35vw;
+  height: 85vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-left: 55vw;
+  text-align: center;
+  background: #AD130C;
+  z-index: 500;
+  margin-top: -50vh;
+  box-shadow: 1px 1px 12px #555;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+#p1p2{
+  text-align: justify;
+  margin-left: 4%;
+}
+
+#separation2{
+  background: url(../img/velofuture.jpg) no-repeat center ;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60vh;
+  position:absolute;
+}
+
+#separation2-container {
+  position: absolute;
+  margin-top: 280vh;
+  height: 100vh;
+  width: 100%;
+}
+
+#para2{
+  background: url(../img/dafpunk.jpg) no-repeat center ;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 160vh;
+  position:absolute;
+}
+
+#para2-container {
+  position: absolute;
+  margin-top: 340vh;
+  height: 100vh;
+  width: 100%;
+}
+
+#box2{
+  color:black;
+  width: 50vw;
+  height: 150vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-top: -10vh;
+  margin-left: 20vw;
+  text-align: center;
+  background: #F8F1F1;
+  box-shadow: 1px 1px 50px #555;
+  z-index: 300;
+  border-radius: 5px;
+}
+
+#p1p3{
+  text-align: justify;
+  margin-left: 2%;
+}
+
+#boxmusic2{
+  color:white;
+  width: 35vw;
+  height: 10vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-left: 27vw;
+  text-align: center;
+  background: #643E15;
+  z-index: 500;
+  margin-top: -45vh;
+  box-shadow: 1px 1px 12px #555;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+img{
+  width: 44vw;
+  height: 50vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-left: 23vw;
+  z-index: 1500;
+  margin-top: 5vh;
+  position: absolute;
+}
+
+#boxmusic2-1{
+  color:white;
+  width: 35vw;
+  height: 10vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-left: 27vw;
+  text-align: center;
+  background: #643E15;
+  z-index: 500;
+  margin-top: 14vh;
+  box-shadow: 1px 1px 12px #555;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+#boxmusic2-2{
+  color:white;
+  width: 35vw;
+  height: 10vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-left: 27vw;
+  margin-top: 110vh;
+  text-align: center;
+  background: #643E15;
+  z-index: 500;
+  box-shadow: 1px 1px 12px #555;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+
+#p1p4{
+  text-align: justify;
+  margin-left: 4%;
+}
+
+#separation3{
+  background: url(../img/velofuture2.png) no-repeat center ;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60vh;
+  position:absolute;
+}
+
+#separation3-container {
+  position: absolute;
+  margin-top: 500vh;
+  width: 100%;
+}
+
+
+#para3{
+  background: url(../img/madmen1.jpg) no-repeat center ;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 140vh;
+  position:absolute;
+}
+
+#para3-container {
+  position: absolute;
+  margin-top: 560vh;
+  height: 140vh;
+  width: 100%;
+}
+
+#separation4{
+  background: url(../img/black.png) no-repeat center ;
+  background-size: cover;
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 30vh;
+  position:absolute;
+}
+
+#separation4-container {
+  position: absolute;
+  margin-top: 700vh;
+  width: 100%;
+}

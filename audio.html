@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Audio ! </title>
+    <link rel="stylesheet" href="./css/audio.css" />
+    <script src = "https://www.youtube.com/iframe_api" ></script>
+
+  </head>
+  <body>
+
+  <nav>
+      <div id="div2">
+        <div id="navw">
+          <ul>
+            <li><a href="audio.html">AUDIO</a></li>
+            <li><a href="video.html">VIDEO</a></li>
+            <li><a href="media.html">ACCUEIL</a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+  <div id="background">
+    <h1>LA MUSIQUE<br> QUI A DU <br>SENS !!!</h1>
+  </div>
+
+  <div id="separation1-container">
+    <div id="separation1">
+      <h1 id="h1s1"></h1>
+    </div>
+  </div>
+
+  <div id="para1-container">
+    <div id="para1">
+      <div id="box1">
+        <h1 id="h1h1">Son Histoire</h1><br/>
+        <p id="p1p1">L’industrie musicale  a subi plus de mutations  en  une petite quinzaine d’années que durant les cinq décennies précédentes. L’explosion des communications en général et d’internet en particulier en est le principal facteur, bousculant nos modes de consommation et transformant en service ce qui a pendant des années été lié à un support physique fort ( la même constatation pourrait être faite pour le cinéma et dans une moindre mesure la littérature).</br>
+
+Les fichiers musicaux auxquels on accède sur internet sont définis par trois principales caractéristiques ; la quantification, la fréquence  échantillonnage et le nombre de voies. La quantification s’exprime en bits ( 8, 16 ou 24) et la fréquence d’échantillonnage en Hz,  la qualité sonore d’une piste  correspondra au produit de ces deux éléments (par exemple un cd est a 44,1 kHz et 16bits  ). Le nombre de voies est plus explicite et définit……....le nombre de voies ! (Mono, stereo, 5.1, 7.1 etc.…..).</br></br></p>
+
+<p class = "para-marginright">Si la musique a su devenir omniprésente sur la toile c’est en grande partie grâce aux formats de compression que l’on peut classer en deux grandes familles, avec ou sans pertes. Le principal représentant de la compression sans pertes est le FLAC( Free Lossless Audio Codec, 2003). Format ouvert et réduisant la taille des fichiers de 30 à 70 % selon le type (les ondes régulières auront un meilleur taux de compression) il est très utilisé pour l’archivage des données.
+Toutefois ce seront les formats avec pertes qui vont vraiment permettre la diffusion et l’échange (parfois illégal) de fichiers musicaux de façon massive. Issu du projet Digital Audio Broadcasting et finalisé en 1992 Le Mpeg 1/-Audio Layer 3 (plus connu sous le sobriquet de MP3) est sans aucun doute le plus connu.Permettant une compression de l’ordre de 10 pour 1 il sera utilisé principalement entre les fréquences de 192kbits(1/7.5) et 320kbits(1/4.4), durant les années 2000 d’autres formats plus performant vont voir le jour (OGG vorbis en particulier) mais n’arriveront pas a s’imposer massivement vu l’omniprésence du mp3.</br></br>
+
+La légèreté des fichiers sons leur permet d’être intégrés facilement dans des sites web et la lecture en streaming est petit à petit devenu la norme.  </p></div>
+
+
+
+        <div id="boxmusic">
+          <h1 id="player">Lecteur M</h1><br/>
+          <p id="p1p2"></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="box1-container">
+
+  </div>
+
+  <div id="separation2-container">
+    <div id="separation2">
+      <h1 id="h1s2"></h1>
+    </div>
+  </div>
+
+  <div id="para2-container">
+    <div id="cover">
+      <img src="img/cerf.png" />
+    </div>
+
+    <div id="para2">
+      <div id="box2">
+        <h1 id="h1h3">Son Histoire</h1><br/>
+        <p id="p1p3"></p></div>
+
+        <div id="boxmusic2">
+          <h1 id="h1h4">Lecteur M Uno</h1><br/>
+          <p id="p1p4"></p>
+        </div>
+
+        <div id="boxmusic2-1">
+          <h1 id="h1h4">Lecteur M Tre</h1><br/>
+          <p id="p1p4"></p></div>
+        </div>
+
+        <div id="boxmusic2-2">
+          <h1 id="h1h4">Lecteur M Duo</h1><br/>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="separation3-container">
+    <div id="separation3">
+      <h1 id="h1s2"></h1>
+    </div>
+  </div>
+
+  <div id="para3-container">
+    <div id="para3">
+
+      <div class = "search" onclick = "delai()" >
+        <script>
+        compteur = 0;
+    (function() {
+      var cx = '002590007848321285987:ahbmmnrn4yk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+
+
+    })();
+    function delai() {
+      setTimeout(captureLien, 1500);
+    }
+
+    function captureLien() {
+    if (compteur == 1){
+      fenetre = document.getElementsByTagName("iframe")[0];
+      document.body.removeChild(fenetre);
+      var x = document.getElementsByTagName("a")[6];
+      var fenetre = document.createElement("iframe");
+      var v = x.toString().slice(32);
+      console.log(v);
+      fenetre.setAttribute("width", "100%");
+      fenetre.setAttribute("height", "730");
+      fenetre.setAttribute("id", "ytplayer");
+      fenetre.setAttribute("src","http://www.youtube.com/embed/" + v +"?autoplay=1&enablejsapi=1&?allowfullscreen=1" );
+      fenetre.classList.add("fenetre1");
+      fenetre.setAttribute("type", "text/html");
+      fenetre.setAttribute("frameborder", "");
+      fenetre.setAttribute("allowfullscreen", "true");
+      document.body.appendChild(fenetre);
+
+
+    }
+    else {
+    var x = document.getElementsByTagName("a")[6];
+    var fenetre = document.createElement("iframe");
+    var v = x.toString().slice(32);
+    console.log(v);
+    fenetre.setAttribute("width", "100%");
+    fenetre.setAttribute("height", "730");
+    fenetre.setAttribute("id", "ytplayer");
+    fenetre.setAttribute("src","http://www.youtube.com/embed/" + v +"?autoplay=1&enablejsapi=1&?allowfullscreen=1" );
+    fenetre.classList.add("fenetre1");
+    fenetre.setAttribute("type", "text/html");
+    fenetre.setAttribute("frameborder", "");
+    fenetre.setAttribute("allowfullscreen", "true");
+    document.body.appendChild(fenetre);
+    compteur = 1;
+      }
+    }
+
+
+    </script>
+    <gcse:searchbox></gcse:searchbox></div>
+    <div class = "resultats"><gcse:searchresults></gcse:searchresults></div>
+      <div id="box3">
+        <h1 id="h1h3"></h1><br/>
+        <p id="p1p4"></p></div>
+
+        <div id="boxmusic3">
+          <h1 id="h1h4"></h1><br/>
+          <p id="p1p4"></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="separation4-container">
+    <div id="separation4">
+      <h1 id="h1s2"></h1>
+    </div>
+  </div>
+
+  </body>
+</html>
