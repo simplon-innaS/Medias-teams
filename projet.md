@@ -109,3 +109,4 @@ Permet de mettre en sourdine la piste audio ou vidéo.
 var vid = document.getElementById("video1");
 vid.muted = true;
 ```
+TEST FORK SUR GIT - ne pas en tenir compte -
