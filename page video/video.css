@@ -83,60 +83,74 @@ margin-left: 1vw;
 #netflix{
   font-family: monospace;
   color: red;
-  font-size: 3em;
-  margin-left: 1vw;
-  margin-top: 3.5vh;
-  display: block;
+  font-size: 7vh;
 }
 
 /*---------Image de série Netflix----------*/
 
+#blocGif1{
+  position: relative;
+  bottom: 0;
+}
+
+#blocGif2{
+  position: relative;
+  top: 0;
+  right: 100%;
+}
+
+#blocGif3{
+  position: relative;
+  top: 0;
+  right:100%;
+}
+#blocGif4{
+  position: relative;
+  bottom: 100%;
+  right: 50%;
+}
+
+#blocGif5{
+  position: relative;
+  bottom: 100%;
+  right: 300%;
+}
 .bloc1{
-  display: flex;
-  flex-wrap: nowrap;
+  float: left;
+  
 }
 
-.marco{
-  margin-top: 5vh;
-  width: 31vw;
-  height: 90vh;
-  display: block;
-}
 
-.jessica{
-  margin-top: 5vh;
-  width: 25vw;
-  height: 45vh;
-  display: block;
+.img-scale:hover{
+  transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transition-duration: 0.5s;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 1px 1px 12px black;
 }
-
-.daredevil{
-  width: 27vw;
-  height: 45vh;
-  display: block;
+.box {
+    float: left;
+    overflow: hidden;
 }
-
-.orange{
-  margin-top: -90vh;
-  margin-left: 25vw;
-  width: 41.5vw;
-  height: 45vh;
-  display: block;
+.box.one {
+    height: 41.4vw;
+    width: 20.70vw;
 }
-
-.sense8{
-  margin-left: 25vw;
-  width: 22vw;
-  height: 45vh;
-  display: block;
+.box.two {
+    height: 20.70vw;
+    width: 20.70vw;
 }
+.box.three {
+    height: 20.70vw;
+    width: 41vw;
 
-.narcos{
-  margin-top: -45vh;
-  margin-left: 45vw;
-  width: 21.5vw;
-  height: 45vh;
-  display: block;
+}
+.box.four {
+    height: 41vw;
+    width: 41vw;
 }
 
 /*---------Titre / CW----------*/
@@ -156,8 +170,6 @@ margin-left: 1vw;
   font-family: monospace;
   color: green;
   font-size: 7vh;
-  margin-left: 51vw;
-  margin-top: -11vh;
 }
 
 /*---------Serie CW----------*/

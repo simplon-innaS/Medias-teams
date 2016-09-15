@@ -33,9 +33,8 @@ body{
   cursor: pointer;
 }
 
-#logoNoteDeMus{
-  height: 12px;
-  width: 13px;
+#container{
+  overflow: hidden;
 }
 #menuGauche ul{
   padding-left: 0;
