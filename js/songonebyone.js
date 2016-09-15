@@ -63,11 +63,11 @@ function insertProp(){
 
 // ON PROGRESS
 var currentSongIndex;
-
 	for (var i = 0; i < tagAudio.length; i++) {
 		tagAudio[i].addEventListener("play", function(){
 			currentSongIndex = tagAudio.indexOf(this);
 		});
+
 		tagAudio[i].addEventListener("ended", function(){
 			tagAudio[currentSongIndex].currentTime = 0;
 				console.log(currentSongIndex);
@@ -75,9 +75,20 @@ var currentSongIndex;
 				next.play();
 				console.log('pendant',tagAudio[i]);
 		});
+		// jouer la musique suivante au click
+		tagAudio[i].addEventListener("click", function(){
+			if(tagAudio[currentSongIndex].played){
+				console.log('CLICK!!!');
+				currentSongIndex = tagAudio.indexOf(this).pause;
+			}
+			else if (currentSongIndex.paused){ // IMPOSSIBLE
+				var clickNext = tagAudio.indexOf(this);
+					clickNext.play();
+				}
+		});
 		console.log('apres',tagAudio[i]);
-}
-// end of on progress
+	}
+	// end of on progress
 	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
 	document.getElementsByTagName('li');
 	};
