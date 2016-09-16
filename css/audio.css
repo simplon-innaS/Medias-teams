@@ -1,5 +1,12 @@
 @import 'https://fonts.googleapis.com/css?family=Fjalla+One&subset=latin-ext';
 
+/** TOFIXED **/
+/* zindex
+background 'cover' fixed
+*/
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -76,9 +83,6 @@ p{
   position: absolute;
 }
 
-
-
-
 .search {
   position: absolute;
   top: 2vw;
@@ -93,58 +97,53 @@ p{
   bottom: 0px;
 }
 
-#div2{ /* positionnement du menu */
-  height: 3.3vw;
-  width: 100%x;
+
+/**** MENU ***/
+.main-nav { /* positionnement du menu */
+  font-family: 'Fjalla One', sans-serif;
+  background-color: #ffffff;
+  width: 100%;
   text-align: 50px;
-  line-height: 30vh;
-  opacity: 1; /* écriture menu transparant */
-  margin-right: 7vw;
   position: absolute;
-  z-index: 1000;
-  margin-right: 20vw;
+  z-index: 999;
+  padding: 10px;
+  opacity: 0.8;
 }
 
-#div ul{
-  float: right;
-  position: relative;
-}
-
-#div2 ul li{
+.main-nav  ul li{
   display: inline;
   list-style-type: none;
-  float: right;
+  float: left;
 }
 
-#div2 ul li a{ /*menu : espace, sans surlignement, couleur*/
+.main-nav  ul li a{ /*menu : espace, sans surlignement, couleur*/
   padding: 1.5vh;
   text-decoration: none;
-  color: #5D4F0B;
+  color: #9cb2d9;
   display: inline;
 }
 
-#div2 ul li:hover{ /*Code couleur transition menu hover*/
+.main-nav  ul li:hover{ /*Code couleur transition menu hover*/
  /*A CHANGER ++++++++++++++++++++++++++++++++++++*/
   transition: all 1s;
 }
 
-#background{
+#home{
   background: linear-gradient(-45deg, #f7d5d4, #9cb2d9);
   background-size: cover;
   background-attachment: fixed;
-  margin: 0;
-  padding: 0;
+  padding: 1vh;
   width: 100%;
-  height: 110vh;
+  min-height: 300px;
+  height: 600vh;
   position:absolute;
 }
 
-#background h1{
+#home h1{
   font-family: 'Fjalla One', sans-serif;
   font-size: 12vh;
-  font-weight: 500;
   text-align: center;
-  margin: 20vh;
+  margin: 5vh;
   color: #ffffff;
   text-shadow: 1px 1px 2px ;
 }
@@ -158,7 +157,7 @@ p{
 }
 
 .box-section{
-  background: url(../img/route.jpg) no-repeat center ;
+  z-index: 1;
   background-size: cover;
   background-attachment: fixed;
   margin: 0;
@@ -171,7 +170,7 @@ p{
 
 #histoire{
   color:black;
-  width: 65vw;
+  width: 65%;
   height: auto;
   padding: 3%;
   margin-top: -10vh;
@@ -185,11 +184,11 @@ p{
 
 #boxmusic{
   position: absolute;
-  z-index: 500;
+  z-index: 2vh;
   float: right;
   top: 30vh;
   margin-right: 15vw;
-  width: 35vw;
+  width: 35%;
   height: auto;
   padding: 2vh;
   margin-left: 55vw;
@@ -205,11 +204,6 @@ p{
 }
 
 
-#deux{
-  height: 160vh;
-  position:absolute;
-  margin-top: 340vh;
-}
 #box2{
   color:black;
   width: 50vw;
@@ -224,7 +218,6 @@ p{
   z-index: 300;
   border-radius: 5px;
 }
-
 #boxmusic2{
   color:white;
   width: 35vw;
@@ -274,8 +267,14 @@ p{
 }
 
 #un{}
-#deux{top:360vh;}
+#deux{top:240vh;}
 #trois{top: 500vh;}
+#quatre{top: 700vh;}
+/*#deux{
+  height: 160vh;
+  position:absolute;
+  margin-top: 340vh;
+}*/
 
 /* CSS VERO FOR PLAYLIST */
 .player-container {height: auto;}
