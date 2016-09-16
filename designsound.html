@@ -51,14 +51,20 @@ var audio = new Audio();
     audio.src = './mp3/rehab.mp3';
     audio.controls = true;
     audio.loop = true;
-  //  audio.autoplay = true;
+    audio.autoplay = true;
+
     audio.crossOrigin = "anonymous";
 
 var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 window.addEventListener("load", initMp3Player, false);
 
+// framelooper() doit être avant l'initialiser de MP3
 function frameLooper(){
-  window.requestAnimationFrame(frameLooper);
+  var muted = false;
+  var kit = ['webkit', 'moz'];
+  for (var x= ;  ){
+      var request =  window.webkitRequestAnimationFrame(frameLooper) || window.requestAnimationFrame(frameLooper);
+    }
   fbc_array = new Uint8Array(analyser.frequencyBinCount);
   analyser.getByteFrequencyData(fbc_array);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -69,10 +75,9 @@ function frameLooper(){
     bar_width = 2;
     bar_height = -(fbc_array[i]/2);
     ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
-  }
+  };
+};
 
-
-}
 function initMp3Player(){
   document.getElementById('audio_box').appendChild(audio);
   context = new AudioContext();
@@ -83,7 +88,7 @@ function initMp3Player(){
   source.connect(analyser);
   analyser.connect(context.destination);
   frameLooper();
-}
+};
 
 </script>
 <body>
