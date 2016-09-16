@@ -7,9 +7,12 @@ body{
 *{
   padding: 0;
 }
-
-/*---------MENU----------*/
-#div2{
+.titre{
+  text-align: center;
+  font-family: monospace;
+}
+/*---------nav----------*/
+#nav{
   background: #AE4337;
   height: 5.3vw;
   width: 100%;
@@ -21,63 +24,50 @@ body{
   position: fixed;
 }
 
-#div2 ul li{
+#nav ul li{
 display: inline-block;
 list-style-type: none;
 margin-left: 1vw;
 }
 
-#div2 ul li a{ /*menu : espace, sans surlignement, couleur*/
+#nav ul li a{ /*menu : espace, sans surlignement, couleur*/
   padding: 1.5vh;
   text-decoration: none;
   color: white;
   display: inline;
 }
 
-/*---------Image sous menu----------*/
+/*---------playlist----------*/
 
-.img10-container{
+#playlist{
   display: flex;
   flex-wrap: nowrap;
 }
 
-.ob{
+#ob{
   width: 67.6vw;
   height: 85vh;
   display: block;
 }
 
-.Sarah{
+#Sarah{
   width: 100%;
   height: 42.5vh;
   margin-top: 0vh;
   display: block;
 }
 
-.rachel{
+#rachel{
   width: 100%;
   height: 42.5vh;
   display: block;
 
 }
 
-/*---------Titre / Netflix----------*/
+/*---------PopUp----------*/
+#containerPopup{
+  overflow: hidden;
 
-.h1h1-container{
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.hr1{
-  margin-top: 10vh;
-}
-
-.titre1{
-  margin-top: 5vh;
-  margin-left: 40vw;
-  text-align: center;
-  font-family: monospace;
-  display: block;
 }
 
 #netflix{
@@ -86,8 +76,9 @@ margin-left: 1vw;
   font-size: 7vh;
 }
 
-/*---------Image de série Netflix----------*/
+#puzzle{
 
+}
 #blocGif1{
   position: relative;
   bottom: 0;
@@ -115,55 +106,43 @@ margin-left: 1vw;
   bottom: 100%;
   right: 300%;
 }
-.bloc1{
-  float: left;
-  
-}
 
 
 .img-scale:hover{
-  transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -webkit-transform: scale(1.05);
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
   transition-duration: 0.5s;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 1px 1px 12px black;
+  box-shadow: 1px 1px 12px white;
 }
 .box {
     float: left;
     overflow: hidden;
 }
-.box.one {
+.one {
     height: 41.4vw;
     width: 20.70vw;
 }
-.box.two {
+.two {
     height: 20.70vw;
     width: 20.70vw;
 }
-.box.three {
+.three {
     height: 20.70vw;
     width: 41vw;
 
 }
-.box.four {
+.four {
     height: 41vw;
     width: 41vw;
 }
 
-/*---------Titre / CW----------*/
-
-.hr2{
-  margin-top: 5vh;
-}
-
-.titre2{
-  margin-top: 10vh;
-  margin-left: -5vw;
-  text-align: center;
-  font-family: monospace;
+/*---------Video background----------*/
+#containerVideoBackground{
+  overflow: auto;
 }
 
 #cw{
@@ -171,165 +150,45 @@ margin-left: 1vw;
   color: green;
   font-size: 7vh;
 }
-
-/*---------Serie CW----------*/
-
-.bloc2{
-  display: flex;
-  flex-wrap: nowrap;
+#videoBackground{
+  position: relative;
 }
-
-.justice{
-  margin-top: 10vh;
-  width: 47vw;
-  height: 95vh;
-  display: block;
+#videoBg{
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  left:0;
+  top:0;
+  overflow: scroll;
 }
-
-.flash{
-  margin-top: -95vh;
-  margin-left: 45vw;
-  width: 27.5vw;
-  height: 47.5vh;
-  display: block;
-}
-
-.arrow{
-  margin-left: 45vw;
-  width: 27.5vw;
-  height: 47.5vh;
-  display: block;
-}
-
-.supergirl{
-  margin-top: -95vh;
-  margin-left: 70vw;
-  width: 27.5vw;
-  height: 47.5vh;
-  display: block;
-}
-
-.the100{
-  margin-left: 70vw;
-  width: 27.5vw;
-  height: 47.5vh;
-  display: block;
-}
-
-/*---------Titre / Actualité / TOP 5...----------*/
-
-.hr3{
-  margin-top: 5vh;
-}
-
-.titre3{
-  margin-top: 7vh;
-  text-align: center;
+#texteVideoBg{
   font-family: monospace;
+  font-size: 3em;
+  color: green;
+  position: absolute;
+  width: 100%;
+  height: 94vh;
+  line-height: 94vh;
+  top:0;
+  overflow: hidden;
+  text-align: center;
+  z-index: 2;
 }
 
-/*---------Top 5----------*/
-
-.box1{
-  color: black;
-  width: 25vw;
-  height: 80vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
+/*playlist aléatoire*/
+#containerPlaylistAleatoire{
+  overflow: auto;
   text-align: center;
-  background: #5E5A5A;
-  margin-top: 15vh;
-  display: inline-block;
 }
 
-#boxtitre1{
-  color: white;
-  width: 25vw;
-  height: 10vh;
-  line-height: 4vh;
-  border-color: red;
-  text-align: center;
-  background-color: #282828;
-  border-bottom: 0.4vh solid #d32027;
-  margin-top: -10vh;
+#bouton{
   font-family: monospace;
-  letter-spacing: 0.5vw;
-  display: inline-block;
+  background-color: #B0FCC1;
+  font-size: 1em;
+  text-shadow: 1px blue;
+    box-shadow: 0;
 }
+a{
+  text-decoration: none;
 
-#pvideo1{
-  color: black;
-  width: 25vw;
-  height: 15vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: center;
-  background: #262222;
-  margin-top: 15vh;
-  display: inline-block;
-}
-
-#pvideo2{
-  color: black;
-  width: 25vw;
-  height: 15vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: center;
-  background: #262222;
-  margin-top: 30vh;
-  display: inline-block;
-}
-
-/*---------New Top----------*/
-
-.box2{
-  color: black;
-  width: 25vw;
-  height: 80vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: center;
-  background: #282828;
-  margin-top: 15vh;
-  display: inline-block;
-}
-
-#boxtitre2{
-  color: white;
-  width: 25vw;
-  height: 10vh;
-  line-height: 4vh;
-  border-color: red;
-  text-align: center;
-  background-color: #5E5A5A;
-  border-bottom: 0.4vh solid #d32027;
-  margin-top: -10vh;
-  font-family: monospace;
-  letter-spacing: 0.5vw;
-  display: inline-block;
-}
-
-#pvideo5{
-  color: black;
-  width: 25vw;
-  height: 15vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: center;
-  background: #5E5A5A;
-  margin-top: 15vh;
-  display: inline-block;
-}
-
-#pvideo6{
-  color: black;
-  width: 25vw;
-  height: 15vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: center;
-  background: #5E5A5A;
-  margin-top: 30vh;
-  display: inline-block;
 }

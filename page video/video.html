@@ -6,98 +6,89 @@
     <link rel="stylesheet" href="video.css" />
   </head>
   <body>
-
-  <nav>
-    <div id="para1s"></div>
-    <div id="div2">
-      <div id="navw">
-        <ul>
-          <li><a href="#">ACCUEIL</a></li>
-          <li><a href="#">AUDIO</a></li>
-          <li><a href="#">VIDEO</a></li>
-        </ul>
+<!--Nav-->
+    <nav id="nav">
+      <ul>
+        <li><a href="#">ACCUEIL</a></li>
+        <li><a href="#">AUDIO</a></li>
+        <li><a href="#">VIDEO</a></li>
+      </ul>
+    </nav>
+<!--Playlist-->
+    <div id="playlist">
+      <div>
+        <video src="airbnb.mp4" id="ob" poster="airbnb.jpg" controls="true" autoplay></video>
+      </div>
+      <div>
+        <video src="astronomyy.mp4" id="Sarah" poster="astronomyy.jpg"></video>
+        <video src="rihannach.mp4" id="rachel" poster="rihannach.jpg"></video>
       </div>
     </div>
-  </nav>
+  <hr/>
 
-  <div class="img10-container">
-      <div class="blocgauche0">
-        <video src="airbnb.mp4" class="ob" poster="airbnb.jpg" controls="true" autoplay>
-        </video>
-      </div>
-    <div class="blocdroit">
-      <video src="astronomyy.mp4" class="Sarah" poster="astronomyy.jpg" >
-      </video>
+<!--pop up-->
+  <div id="containerPopup">
+    <h1 class="titre">SERIE <a id="netflix">NETFLIX</a></h1>
 
-      <video src="rihannach.mp4" class="rachel" poster="rihannach.jpg" >
-      </video>
+    <div id="puzzle">
+      <div class="box one img-scale"><img src="10s.gif" id="blocGif1"/></div>
+      <div class="box two img-scale"><img src="10s.gif" id="blocGif2"/></div>
+      <div class="box three img-scale"><img src="10s.gif" id="blocGif3"/></div>
+      <div class="box three img-scale"><img src="10s.gif" id="blocGif4"/></div>
+      <div class="box two img-scale"><img src="10s.gif" id="blocGif5"/></div>
     </div>
   </div>
+  <hr/>
 
-        <br><hr class="hr1"/>
+<!--Video background-->
+  <div id="containerVideoBackground">
+    <h1 class="titre">SERIE <a id="cw">CW</a></h1>
 
-  <div class="h1h1-container">
-    <h1 class="titre1">SERIE <a id="netflix">NETFLIX</a></h1>
-  </div>
-
-  <div class="bloc1">
-    <div class="box one img-scale"><img src="10s.gif" id="blocGif1" alt="" /></div>
-    <div class="box two img-scale"><img src="10s.gif" id="blocGif2" alt="" /></div>
-    <div class="box three img-scale"><img src="10s.gif" id="blocGif3" alt="" /></div>
-
-    <div class="box three img-scale"><img src="10s.gif" id="blocGif4" alt="" /></div>
-    <div class="box two img-scale"><img src="10s.gif" id="blocGif5" alt="" /></div>
-
-  </div>
-
-    <br><hr class="hr2"/>
-
-  <div clas="h1h2-container">
-    <h1 class="titre2">SERIE <a id="cw">CW</a></h1>
-      <br>
-  </div>
-
-  <div class="bloc2">
-    <div class="blocgauche2">  <div class="bloc2">
-      <img src="Images/JusticeL.jpg" class="justice">
-  </div>
-  <div class="blockdroit2">
-      <img src="Images/Flash.png" class="flash">
-      <img src="Images/Arrow.jpg" class="arrow">
-      <img src="Images/SuperG.jpg" class="supergirl">
-      <img src="Images/the100.jpg" class="the100">
-  </div>
-
-    <br><hr class="hr3"/>
-
-  <div clas="h1h3-container">
-    <h1 class="titre3">AUTRE </h1>
-      <br>
-  </div>
-
-  <div class="box1">
-    <div id="boxtitre1"><h1>TOP 5</h1>
-      <div id="pvideo1">
-        <div id="pvideo2">
-          <div id="pvideo3">
-          </div>
-        </div>
-      </div>
+    <div id="videoBackground">
+      <h1 id='texteVideoBg'>Une video en background</h1>
+      <video id="videoBg" src="rihannach.mp4" autoplay="true" loop="true" muted="true"></video>
     </div>
   </div>
+<hr/>
 
-  <div class="box2">
-    <div id="boxtitre2"><h1>NEWS</h1>
-      <div id="pvideo4">
-        <div id="pvideo5">
-          <div id="pvideo6">
-          </div>
-        </div>
-      </div>
+
+<!--Playlist aléatoire-->
+    <div id="containerPlaylistAleatoire">
+      <h1 class="titre">SERIE <a id="cw">blablabla</a></h1>
+
+      <a href="#unevideo" onclick="aleatoire(event);" ><input type="button" id="bouton" name="name" value="Afficher une video aléatoire"/></a><br>
+      <video id="une_video" class="video0"></video>
     </div>
-  </div>
-</div>
-</div>
+
+    <script type="text/javascript">
+    var tableauVideos = [
+      {id: 1, src: 'airbnb.mp4'},
+      {id: 2, src: 'astronomyy.mp4'},
+      {id: 3, src: 'rihannach.mp4'}
+    ];
+    function aleatoire(e){
+      //document.getElementById('unevideo').controls = true;
+      var videoHasard = tableauVideos[Math.floor(Math.random()*tableauVideos.length)].src;
+      var video = document.getElementsByClassName("video0")[0];
+      // alert(videoHasard);
+      if (videoHasard == tableauVideos[0].src){
+        video.src = tableauVideos[0].src;
+        tableauVideos.splice(0,1);
+      } else if(videoHasard == tableauVideos[1].src){
+        video.src = tableauVideos[1].src;
+        tableauVideos.splice(1,1);
+      }else{
+        video.src = tableauVideos[2].src;
+        tableauVideos.splice(2,1);
+      }
+      console.log(videoHasard)
+      setTimeout(function(){
+        document.getElementById('une_video').controls = true;
+        document.getElementById('une_video').scrollIntoView();},500);
+
+    }
+
+    </script>
 
   </body>
 </html>
