@@ -1,6 +1,3 @@
-
-    <script type="text/javascript">
-
   playRandom();
 
 
@@ -225,6 +222,3 @@
     setText(playButton,"Play");
   };
 };
-
-
-  </script>

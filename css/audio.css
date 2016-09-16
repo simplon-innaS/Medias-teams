@@ -1,6 +1,9 @@
+@import 'https://fonts.googleapis.com/css?family=Fjalla+One&subset=latin-ext';
+
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
@@ -13,7 +16,34 @@ nav {
   margin-right: 20%;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Fjalla One', sans-serif;
+}
+h3{
+  font-size: 3em;
+  line-height: 2em;
+  color:  #9cb2d9;
+}
 
+p{
+  font-size: 1.3em;
+  text-align: justify;
+  margin-right: 16%;
+  margin-left: 3%;
+  color: #333333;
+}
+
+
+#p1p3{
+  text-align: justify;
+  margin-left: 2%;
+}
+#p1p1{
+  text-align: justify;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+}
 
 .fenetre1 {
   position: relative;
@@ -36,12 +66,6 @@ nav {
 .test:hover {
   cursor: pointer;
 }
-.para-marginright {
-  text-align: left ;
-  margin-right: 18%;
-  margin-left: 3%;
-}
-
 .confirm {
   color: black;
   font-family: sans-serif;
@@ -105,7 +129,7 @@ nav {
 }
 
 #background{
-  background: url(../img/Bioshock1.jpg) no-repeat center;
+  background: linear-gradient(-45deg, #f7d5d4, #9cb2d9);
   background-size: cover;
   background-attachment: fixed;
   margin: 0;
@@ -116,32 +140,24 @@ nav {
 }
 
 #background h1{
+  font-family: 'Fjalla One', sans-serif;
   font-size: 12vh;
   font-weight: 500;
   text-align: center;
   margin: 20vh;
-  color: #402405;
-  text-shadow: 1px 1px 5px ;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px ;
 }
-
-#separation1{
-  background: url(../img/Bioshock2.jpg) no-repeat center ;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 60vh;
-  position:absolute;
-}
-
-#separation1-container {
+.box-container {
   position: absolute;
-  margin-top: 110vh;
+  top: 100vh;
   height: 100vh;
   width: 100%;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 
-#para1{
+.box-section{
   background: url(../img/route.jpg) no-repeat center ;
   background-size: cover;
   background-attachment: fixed;
@@ -152,99 +168,48 @@ nav {
   position:absolute;
 }
 
-#para1-container {
-  position: absolute;
-  margin-top: 160vh;
-  height: 100vh;
-  width: 100%;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
-}
 
-#box1{
+#histoire{
   color:black;
   width: 65vw;
-  height: 80vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
+  height: auto;
+  padding: 3%;
   margin-top: -10vh;
   margin-left: 0vw;
   text-align: center;
   background: white;
   box-shadow: 1px 1px 12px #555;
   z-index: 300;
-}
-
-#p1p1{
-  text-align: justify;
-  margin-left: 2vw;
-  margin-right: 2vw;
-  margin-bottom: 2vh;
-}
-
-#p-margin{
-  text-align: justify;
-  margin-left: 2vw;
-  margin-right: 13vw;
-  margin-bottom: 2vh;
+  border-radius: 3px;
 }
 
 #boxmusic{
-  color:white;
+  position: absolute;
+  z-index: 500;
+  float: right;
+  top: 30vh;
+  margin-right: 15vw;
   width: 35vw;
-  height: 85vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
+  height: auto;
+  padding: 2vh;
   margin-left: 55vw;
+  color:white;
   text-align: center;
   background: #AD130C;
-  z-index: 500;
-  margin-top: -50vh;
+
+  overflow: hidden;
   box-shadow: 1px 1px 12px #555;
   opacity: 0.9;
   filter: alpha(opacity=90);
+  border-radius: 3px;
 }
 
-#p1p2{
-  text-align: justify;
-  margin-left: 4%;
-}
 
-#separation2{
-  background: url(../img/velofuture.jpg) no-repeat center ;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 60vh;
-  position:absolute;
-}
-
-#separation2-container {
-  position: absolute;
-  margin-top: 280vh;
-  height: 100vh;
-  width: 100%;
-}
-
-#para2{
-  background: url(../img/dafpunk.jpg) no-repeat center ;
-  background-size: cover;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+#deux{
   height: 160vh;
   position:absolute;
-}
-
-#para2-container {
-  position: absolute;
   margin-top: 340vh;
-  height: 100vh;
-  width: 100%;
 }
-
 #box2{
   color:black;
   width: 50vw;
@@ -258,11 +223,6 @@ nav {
   box-shadow: 1px 1px 50px #555;
   z-index: 300;
   border-radius: 5px;
-}
-
-#p1p3{
-  text-align: justify;
-  margin-left: 2%;
 }
 
 #boxmusic2{
@@ -279,17 +239,6 @@ nav {
   box-shadow: 1px 1px 12px #555;
   opacity: 0.9;
   filter: alpha(opacity=90);
-}
-
-img{
-  width: 44vw;
-  height: 50vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  margin-left: 23vw;
-  z-index: 1500;
-  margin-top: 5vh;
-  position: absolute;
 }
 
 #boxmusic2-1{
@@ -324,60 +273,42 @@ img{
   filter: alpha(opacity=90);
 }
 
+#un{}
+#deux{top:360vh;}
+#trois{top: 500vh;}
 
-#p1p4{
-  text-align: justify;
-  margin-left: 4%;
+/* CSS VERO FOR PLAYLIST */
+.player-container {height: auto;}
+.player-container img{height: 150px;}
+.musiclist ul{
+  display: inline-block;
+  width: 65%;
+  float: left;
 }
-
-#separation3{
-  background: url(../img/velofuture2.png) no-repeat center ;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 60vh;
-  position:absolute;
+.musiclist li{
+  display: block;
+  height: 100%;
+  list-style: none;
 }
-
-#separation3-container {
-  position: absolute;
-  margin-top: 500vh;
-  width: 100%;
+.musiclist li:last-child {
+  padding-top: 20px;
 }
-
-
-#para3{
-  background: url(../img/madmen1.jpg) no-repeat center ;
-  background-size: cover;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 140vh;
-  position:absolute;
+.container-piste{
+  display: block;
+  height: 125px;
 }
-
-#para3-container {
-  position: absolute;
-  margin-top: 560vh;
-  height: 140vh;
+.container-piste img{
+  height: 100%;
+  float: left;
+}
+.media_player{
   width: 100%;
 }
-
-#separation4{
-  background: url(../img/black.png) no-repeat center ;
-  background-size: cover;
-
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 30vh;
-  position:absolute;
-}
-
-#separation4-container {
-  position: absolute;
-  margin-top: 700vh;
+.track{
   width: 100%;
 }
+.title{
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 2em;
+}
+/* fin vero css */
