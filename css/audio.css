@@ -227,29 +227,40 @@ input.gsc-search-button:focus {
   float: left;
 }
 
-/* CSS VERO FOR PLAYLIST */
-.player-container {height: auto;}
-.player-container img{height: 150px;}
-.musiclist ul{
+.player-container{
+    width: 70%;
+    padding-left: 10px;
+}
+.player-container, .image{
   display: inline-block;
-  width: 65%;
   float: left;
 }
-.musiclist li{
+/* CSS VERO FOR PLAYLIST */
+.player-container img{
+  height: 150px;
+}
+.image{width: 30%;}
+.container-piste img{
+  height: 125px;
+  float: left;
+}
+.player-container ul{
+  height: auto;
+  display: inline-block;
+  float: left;
+}
+.player-container li{
   display: block;
   height: 100%;
   list-style: none;
+  text-align: left;
 }
-.musiclist li:last-child {
+.player-container li:last-child {
   padding-top: 20px;
 }
 .container-piste{
   display: block;
   height: 125px;
-}
-.container-piste img{
-  height: 100%;
-  float: left;
 }
 .media_player{
   width: 100%;
