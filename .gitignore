@@ -5,6 +5,7 @@ gitignore
 
 #fichier images non utilisés
 /unUseImg/*
+/ignore/*
 
 #fichier .txt et .sh
 # ces fichiers ne sont utiles que pour le tri de base

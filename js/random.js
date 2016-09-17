@@ -1,7 +1,5 @@
   playRandom();
-
-
-    function playRandom(){
+  function playRandom(){
   // recuperer la SOURCE du MP3 default
   var playTrack = document.getElementById('track');
   console.log(playTrack);
