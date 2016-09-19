@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: rgb(189, 195, 199);
+    font-family: sans-serif;
+}
+
+#container {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: rgb(35, 35, 44);
+    color: rgb(248, 248, 249);
+    display: flex;
+    justify-content: space-around;
+}
+#titre {
+
+}
+    #titre h1, h2 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+    nav ul {
+        position: relative;
+        top: 45px;
+    }
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 2px 5px;
+        vertical-align: baseline;
+    }
+    nav a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+/* Section */
+section {
+    width: 90%;
+    background: rgb(255,255,255);
+    margin: auto;
+    padding: 5px 7px;
+}
+    section h1, section h2 {
+        color: rgb(76,158,237);
+    }
+    #intro h1 {
+        text-align: center;
+    }
+
+    .atelier {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10%;
+    }
+    .atelier .texte {
+        width: 50%;
+        border-right: 1px solid black;
+    }
