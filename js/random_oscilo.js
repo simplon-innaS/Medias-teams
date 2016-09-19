@@ -39,5 +39,6 @@ var audio = new Audio();
     source = context.createMediaElementSource(audio);
     source.connect(analyser);
     analyser.connect(context.destination);
+    playRandom();
     frameLooper();
   };

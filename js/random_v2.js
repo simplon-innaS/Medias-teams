@@ -1,12 +1,12 @@
 /*---------------- PLAYRANDOM----------------*/
-  playRandom();
+  //playRandom();
   function playRandom(){
   // recuperer la SOURCE du MP3 default
   var playTrack = document.getElementById('audioOscilo');
   console.log(playTrack);
 
   // cacher / supprimer le control -- player
-  //playTrack.removeAttribute("controls");
+  playTrack.removeAttribute("controls");
 
   // tableau des données piste
   var PlayList = [

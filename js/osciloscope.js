@@ -1,9 +1,9 @@
-
+var source = document.getElementById('audioOscilo');
 
 var audio = new Audio();
-audio.src = document.getElementById('audioOscilo').getAttribute('src');
+audio.src = source.getAttribute('src');
 console.log(audio.src);
-//audio.src = './mp3/rehab.mp3';
+audio.src = './mp3/rehab.mp3';
 audio.controls = true;
 audio.loop = true;
 // audio.autoplay = true;
