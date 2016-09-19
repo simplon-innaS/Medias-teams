@@ -68,12 +68,14 @@ p{
   text-align: justify;
   margin-right: 16%;
   margin-left: 3%;
+  padding-bottom: 10px;
   color: #333333;
+  line-height: 1.4em;
 }
 
 .fenetre1 {
   position: relative;
-  top: 290vh;
+  top: 180px /*290vh;*/
   left: 0% ;
   display: inline-block;
 }
@@ -162,9 +164,9 @@ input.gsc-search-button:focus {
   position:absolute;
 }
 
-#un{top:85vh;}
-#deux{top:220vh;}
-#trois{top: 270vh;}
+#un{top:600px;}
+#deux{top:1600px;}
+#trois{top: 2010vh;}
 
 #histoire{
   color:black;
@@ -207,24 +209,33 @@ input.gsc-search-button:focus {
   box-shadow: 1px 1px 50px #555;
   border-radius: 5px;
 }
-#mp3_player{
+.mp3_player{
   width: 500px;
-  height: 100%;
   background: #000;
   padding: 5px;
-  margin: 50px
-  auto;
+  margin: 50px;
 }
-#mp3_player > div > audio{
+.mp3_player ul {
+    display: block;
+    height: 60px;
+    position: relative;
+  }
+.mp3_player li {
+    display: inline-block;
+    color: #ffffff;
+  }
+#audioOscilo{
   width: 500px;
   background: #000;
   float: left;
 }
-#mp3_player > canvas {
-  width: 500px;
-  height: 90%;
+#analyser_render{
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 200px;
   background: #2CB2A9;
-  float: left;
 }
 
 .player-container{

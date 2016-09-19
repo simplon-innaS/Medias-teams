@@ -1,11 +1,13 @@
+/*---------------- PLAYRANDOM----------------*/
   playRandom();
+
   function playRandom(){
   // recuperer la SOURCE du MP3 default
-  var playTrack = document.getElementById('track');
+  var playTrack = document.getElementById('audioOscilo');
   console.log(playTrack);
 
   // cacher / supprimer le control -- player
-  playTrack.removeAttribute("controls");
+  //playTrack.removeAttribute("controls");
 
   // tableau des données piste
   var PlayList = [
@@ -22,29 +24,31 @@
   	];
 
     console.log(PlayList);
-    /*---------------- PARTIE A RECRIRE SELON TERME DOC PRECEDENT -----------------*/
+/*---------------- PARTIE A RECRIRE SELON TERME DOC PRECEDENT -----------------*/
       // recuperation de UL
       var mediaPlayer = document.getElementById('controlers');
       piste = document.getElementById('btns');
 
+/*---------------- ECRIRE TEXTE ----------------*/
       // écrire du texte dans les différents balbutiements
       function setText(el,text) {
         el.innerHTML = text;
-      }
+      };
 
-      // création de PREV
+/*---------------- BTN  PRECECDENT ----------------*/
+
+      // création de Next
       var prevBtn = document.createElement('button');
       prevBtn.type = 'button';
       mediaPlayer.appendChild(prevBtn);
       setText(prevBtn, "<");
-      /**** ****/
+
       prevBtn.addEventListener("click", prev);
 
       function prev(){
-        var trackPlayed = document.getElementById('track').getAttribute('src')
-        console.log(trackPlayed);
-
+        var trackPlayed = document.getElementById('audioOscilo').getAttribute('src')
         var prevTrack;
+
         // comparaison de l'Attribut HTML et de la propriété du tableau
         for (var i = 0; i < PlayList.length; i++) {
           console.log("track joué = ",trackPlayed, PlayList[i].src);
@@ -56,13 +60,13 @@
               console.log("Needed Me > Johnny= " + PlayList[PlayList.length-1].src, prevTrack);
               console.log(prevTrack);
               console.log(i, "5 l'index de ", prevTrack);
-              document.getElementById('track').setAttribute('src', prevTrack);
+              document.getElementById('audioOscilo').setAttribute('src', prevTrack);
 
               // remplacer les valeur
               document.getElementById('titre').innerHTML= PlayList[PlayList.length-1].title;
               document.getElementById('artiste').innerHTML=PlayList[PlayList.length-1].artist;
               document.getElementById('album').innerHTML=PlayList[PlayList.length-1].album;
-              document.getElementById('jacketsrc').setAttribute('src', PlayList[PlayList.length-1].imgsrc);
+              // document.getElementById('jacketsrc').setAttribute('src', PlayList[PlayList.length-1].imgsrc);
 
             }
             // Si la piste est différent à l'index[0] (Needed me)
@@ -71,14 +75,14 @@
 
               console.log(prevTrack);
               console.log(i, "autre l'index de ", prevTrack);
-              document.getElementById('track').setAttribute('src', prevTrack);
+              document.getElementById('audioOscilo').setAttribute('src', prevTrack);
 
               // remplacer les valeur
               document.getElementById('titre').innerHTML= PlayList[i-1].title;
               document.getElementById('artiste').innerHTML= PlayList[i-1].artist;
               document.getElementById('album').innerHTML= PlayList[i-1].album;
               console.log(PlayList[i-1].title);
-              document.getElementById('jacketsrc').setAttribute('src', PlayList[i-1].imgsrc);
+              // document.getElementById('jacketsrc').setAttribute('src', PlayList[i-1].imgsrc);
             }
             console.log(i, " et track prev =", prevTrack);
             break;
@@ -86,16 +90,14 @@
         };
 
       };
-      /*** ****/
-      //LECTURE / PAUSE
-      // création de PLAY
+/*---------------- PLAY & PAUSE BTN  ----------------*/
       var playBtn = document.createElement('button');
       playBtn.type = 'button';
       mediaPlayer.appendChild(playBtn);
       setText(playBtn, "play");
-      // faire fonctionner le btn player
+      // ECOUTEUR DE 'EVENEMENT'
       playBtn.addEventListener("click", player);
-      /* TOFIXED 'onplay'*/
+
       function player() {
         if (playTrack.paused) {
           setText(playBtn,"pause");
@@ -105,14 +107,11 @@
           playTrack.pause();
         };
       };
-      // SON / MUET
-      // couper son >> mute btn
+/*---------------- SON / MUET /---------------*/
       var muteBtn = document.createElement('button');
       muteBtn.type = 'button';
       mediaPlayer.appendChild(muteBtn);
       setText(muteBtn,"mute");
-      //***deplacer
-      // event sur le BTN MUTE
       muteBtn.addEventListener("click", muter);
       function muter() {
         if (playTrack.volume == 0) {
@@ -123,9 +122,6 @@
           playTrack.volume = 0;
         };
       };
-
-      //*** REALY IMPORTANT
-      // création de Random
       var randomBtn = document.createElement('button');
       randomBtn.type = 'button';
       mediaPlayer.appendChild(randomBtn);
@@ -139,7 +135,7 @@
       }
 
       // Remplacer la ressource SRC par nouvelle SRC RANDOM
-      document.getElementById('track').setAttribute('src', randomSrc);
+      document.getElementById('audioOscilo').setAttribute('src', randomSrc);
 
       // TOFIXED
       // mettre lancer une function qui appel le "setAttribute"
@@ -149,7 +145,7 @@
       document.getElementById('titre').innerHTML= PlayList[index].title;
       document.getElementById('artiste').innerHTML= PlayList[index].artist;
       document.getElementById('album').innerHTML= PlayList[index].album;
-      document.getElementById('jacketsrc').setAttribute('src', PlayList[index].imgsrc);
+      // document.getElementById('jacketsrc').setAttribute('src', PlayList[index].imgsrc);
       console.log(PlayList[index].title, "\n------");
     };
 
@@ -160,7 +156,7 @@
       setText(nextBtn, ">");
       nextBtn.addEventListener("click", next);
       function next(){
-        var trackPlayed = document.getElementById('track').getAttribute('src')
+        var trackPlayed = document.getElementById('audioOscilo').getAttribute('src');
         console.log(trackPlayed);
 
         var nextTrack;
@@ -171,28 +167,28 @@
           // Si la piste en Lecture est 0 (Needed me) on retourne la dernier piste de la PlayList (Jonny)
           if (trackPlayed == PlayList[PlayList.length-1].src){
             nextTrack = PlayList[0].src;
-            document.getElementById('track').setAttribute('src', nextTrack);
+            document.getElementById('audioOscilo').setAttribute('src', nextTrack);
 
             // remplacer les valeur
             document.getElementById('titre').innerHTML= PlayList[0].title;
             document.getElementById('artiste').innerHTML=PlayList[0].artist;
             document.getElementById('album').innerHTML=PlayList[0].album;
             console.log(PlayList[0].title);
-            document.getElementById('jacketsrc').setAttribute('src', PlayList[0].imgsrc);
+            // document.getElementById('jacketsrc').setAttribute('src', PlayList[0].imgsrc);
 
           }
           // Si la piste est différent à l'index[0] (Needed me)
           else if ((trackPlayed != PlayList[PlayList.length-1].src)){
             nextTrack = PlayList[i+1].src;
 
-            document.getElementById('track').setAttribute('src', nextTrack);
+            document.getElementById('audioOscilo').setAttribute('src', nextTrack);
 
             // remplacer les valeur
             document.getElementById('titre').innerHTML= PlayList[i+1].title;
             document.getElementById('artiste').innerHTML= PlayList[i+1].artist;
             document.getElementById('album').innerHTML= PlayList[i+1].album;
             console.log(PlayList[i+1].title);
-            document.getElementById('jacketsrc').setAttribute('src', PlayList[i+1].imgsrc);
+            // document.getElementById('jacketsrc').setAttribute('src', PlayList[i+1].imgsrc);
           }
           console.log(i, " et track next =", nextTrack);
           break;
@@ -238,4 +234,16 @@
         playTrack.currentTime = 0;
         setText(playButton,"Play");
       };
+    };
+
+    function initMp3Player(){
+      document.getElementById('audio_box').appendChild(audio);
+      context = new AudioContext();
+      analyser = context.createAnalyser();
+      canvas = document.getElementById('analyser_render');
+      ctx = canvas.getContext('2d');
+      source = context.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(context.destination);
+      frameLooper();
     };

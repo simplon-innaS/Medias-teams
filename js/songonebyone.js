@@ -1,3 +1,6 @@
+playOneByOne()
+
+function playOneByOne(){
 // >> RECUPERER LA VALEUR DU LECTEUR DEFAULT DABORD
 // tableau des données piste
 var PlayList = [
@@ -15,7 +18,7 @@ var PlayList = [
 
 console.log("\n#1 INSERER PISTE UN PAR UN DANS CHAQUE PLAYER");
 //parcourir la playlist et insérer petit à petit
-var tagAudio = Array.from(document.getElementsByTagName('audio')); // Array.from transforme un Array-like en vrai tableau[]
+var tagAudio = Array.from(document.getElementById('boxmusic').getElementsByTagName('audio')); // Array.from transforme un Array-like en vrai tableau[]
 var tagImg = Array.from(document.getElementsByTagName('img'));
 
 // écrire du texte dans les différents balbutiements
@@ -61,39 +64,39 @@ function insertProp(){
 		};
 		console.log("piste pisteObj avant ended", pisteObj, tagAudio[p]);
 
-// ON PROGRESS
-var currentSongIndex;
-	for (var i = 0; i < tagAudio.length; i++) {
-		tagAudio[i].addEventListener("play", function(){
-			currentSongIndex = tagAudio.indexOf(this);
-		});
+	// lire la chanson suivante
+	var currentSongIndex;
+		for (var i = 0; i < tagAudio.length; i++) {
+			tagAudio[i].addEventListener("play", function(){
+				currentSongIndex = tagAudio.indexOf(this);
+			});
 
-		tagAudio[i].addEventListener("ended", function(){
-			tagAudio[currentSongIndex].currentTime = 0;
-				console.log(currentSongIndex);
-				var next = tagAudio[currentSongIndex + 1] ? tagAudio[currentSongIndex + 1] : tagAudio[0];
-				next.play();
-				console.log('pendant',tagAudio[i]);
-		});
-		// jouer la musique suivante au click
-		tagAudio[i].addEventListener("click", function(){
-			if(tagAudio[currentSongIndex].played){
-				console.log('CLICK!!!');
-				currentSongIndex = tagAudio.indexOf(this).pause;
-			}
-			else if (currentSongIndex.paused){ // IMPOSSIBLE
-				var clickNext = tagAudio.indexOf(this);
-					clickNext.play();
+			tagAudio[i].addEventListener("ended", function(){
+				tagAudio[currentSongIndex].currentTime = 0;
+					console.log(currentSongIndex);
+					var next = tagAudio[currentSongIndex + 1] ? tagAudio[currentSongIndex + 1] : tagAudio[0];
+					next.play();
+					console.log('pendant',tagAudio[i]);
+			});
+			// jouer la musique suivante au click
+			tagAudio[i].addEventListener("click", function(){
+				if(tagAudio[currentSongIndex].played){
+					console.log('CLICK!!!');
+					currentSongIndex = tagAudio.indexOf(this).pause;
 				}
-		});
-		console.log('apres',tagAudio[i]);
-	}
-	// end of on progress
-	console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
-	document.getElementsByTagName('li');
+				else if (currentSongIndex.paused){ // IMPOSSIBLE
+					var clickNext = tagAudio.indexOf(this);
+						clickNext.play();
+					}
+			});
+			console.log('apres',tagAudio[i]);
+		}
+		// end of on progress
+		console.log("piste ", p,"----", piste, image ,"----------------- Loop ", p+1);
+		document.getElementsByTagName('li');
+		};
 	};
-};
-};
+	};
 
 var controlers = document.getElementsByClassName('btns');
 function audioPlay() {
@@ -117,10 +120,4 @@ function audioPlay() {
 // Quand la piste est finie (piste.ended)
 // je charge l'autre piste piste(i+1).load()
 
-tagAudio.onended = function(){ alert('yes'); }
-
-
-// RECUPERER UN CONTAINER-PLAYER PAR ID
-var containerPlayerId = document.getElementById('p-1');
-// RECUPERER UN CONTAINER-PLAYER PAR class
-var containerPlayerClass = document.getElementsByClassName('p-1')[0];
+}
