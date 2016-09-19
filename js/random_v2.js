@@ -1,6 +1,5 @@
 /*---------------- PLAYRANDOM----------------*/
   playRandom();
-
   function playRandom(){
   // recuperer la SOURCE du MP3 default
   var playTrack = document.getElementById('audioOscilo');

@@ -136,7 +136,7 @@ input.gsc-search-button:focus {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 300vh;
+  min-height: 2400px;
   position:absolute;
 }
 
@@ -165,8 +165,8 @@ input.gsc-search-button:focus {
 }
 
 #un{top:600px;}
-#deux{top:1600px;}
-#trois{top: 2010vh;}
+#deux{top:1700px;}
+#trois{top: 2050px;}
 
 #histoire{
   color:black;
@@ -273,7 +273,7 @@ input.gsc-search-button:focus {
   display: block;
   height: 125px;
 }
-.media_player{
+.media_player,  .audio_box{
   width: 100%;
 }
 .track{

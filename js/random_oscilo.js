@@ -30,7 +30,8 @@ var audio = new Audio();
     }
   }
   function initMp3Player(){
-    document.getElementById('audio_box').appendChild(audio);
+    console.log("audio == "+ audio);
+    document.getElementById('audio_box').appendChild(audio).setAttribute('id', 'audioOscilo');
     context = new AudioContext();
     analyser = context.createAnalyser();
     canvas = document.getElementById('analyser_render');
