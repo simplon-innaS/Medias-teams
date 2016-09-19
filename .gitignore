@@ -11,3 +11,6 @@ gitignore
 # ces fichiers ne sont utiles que pour le tri de base
 *.sh
 *.txt
+test.html
+diff_sound.html
+
