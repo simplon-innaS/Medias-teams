@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Audio ! </title>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="./css/audio.css" />
+  <script src = "https://www.youtube.com/iframe_api" ></script>
+</head>
+<body>
+  <script type="text/javascript" src="./js/random_oscilo.js"></script>
+  <nav >
+    <ul>
+      <li><a href="media.html">ACCUEIL</a></li>
+      <li><a href="video.html">VIDEO</a></li>
+      <li><a href="audio.html">AUDIO</a></li>
+    </ul>
+  </nav>
+  <div id="gotop">
+    <a href="#top">go top</a>
+  </div>
+  <span id="top"></span>
+  <div id="background">
+    <h1>LA MUSIQUE<br> QUI A DU <br>SENS !!!</h1>
+    <pre type="css">
+      <code>
+      h1{
+        color: red;
+        height: 10px;
+      }
+      </code>
+    </pre>
+    <code type="javascript">
+      var audio = new Audio();
+        audio.src = './mp3/rehab.mp3';
+        console.log(audio.src);
+        audio.controls = true;
+        audio.loop = true;
+        // audio.autoplay = true;
+        audio.crossOrigin = "anonymous";
+
+    </code>
+  </div>
+<!--  <section id="un" class="box-container">
+    <div class="box-section">
+      <div id="histoire">
+        <h3>Son Histoire</h3>
+
+        <code type="css">
+          h1{
+            color: red;
+            height: 10px;
+          }
+        </code>
+        <code type="javascript">
+          var audio = new Audio();
+            audio.src = './mp3/rehab.mp3';
+            console.log(audio.src);
+            audio.controls = true;
+            audio.loop = true;
+            // audio.autoplay = true;
+            audio.crossOrigin = "anonymous";
+
+        </code>
+        <p >L’industrie musicale  a subi plus de mutations  en  une petite quinzaine d’années que durant les cinq décennies précédentes. L’explosion des communications en général et d’internet en particulier en est le principal facteur, bousculant nos modes de consommation et transformant en service ce qui a pendant des années été lié à un support physique fort ( la même constatation pourrait être faite pour le cinéma et dans une moindre mesure la littérature).
+        </p>
+
+        <p>Les fichiers musicaux auxquels on accède sur internet sont définis par trois principales caractéristiques ; la quantification, la fréquence  échantillonnage et le nombre de voies. La quantification s’exprime en bits ( 8, 16 ou 24) et la fréquence d’échantillonnage en Hz,  la qualité sonore d’une piste  correspondra au produit de ces deux éléments (par exemple un cd est a 44,1 kHz et 16bits  ). Le nombre de voies est plus explicite et définit……....le nombre de voies ! (Mono, stereo, 5.1, 7.1 etc.…..).
+        </p>
+
+        <p class = "para-marginright">Si la musique a su devenir omniprésente sur la toile c’est en grande partie grâce aux formats de compression que l’on peut classer en deux grandes familles, avec ou sans pertes. Le principal représentant de la compression sans pertes est le FLAC( Free Lossless Audio Codec, 2003). Format ouvert et réduisant la taille des fichiers de 30 à 70 % selon le type (les ondes régulières auront un meilleur taux de compression) il est très utilisé pour l’archivage des données.
+          Toutefois ce seront les formats avec pertes qui vont vraiment permettre la diffusion et l’échange (parfois illégal) de fichiers musicaux de façon massive. Issu du projet Digital Audio Broadcasting et finalisé en 1992 Le Mpeg 1/-Audio Layer 3 (plus connu sous le sobriquet de MP3) est sans aucun doute le plus connu.Permettant une compression de l’ordre de 10 pour 1 il sera utilisé principalement entre les fréquences de 192kbits(1/7.5) et 320kbits(1/4.4), durant les années 2000 d’autres formats plus performant vont voir le jour (OGG vorbis en particulier) mais n’arriveront pas a s’imposer massivement vu l’omniprésence du mp3.</br></br>
+
+          La légèreté des fichiers sons leur permet d’être intégrés facilement dans des sites web et la lecture en streaming est petit à petit devenu la norme.
+        </p>
+      </div>
+      <div id="boxmusic">
+        <div class="musiclist">
+          <!-- informations about song -->
+          <!-- first player -->
+          <div  class="container-piste" id="p-1">
+            <div class="image">
+              <img class="imgsrc" src="./img/track_background.png">
+            </div>
+            <ul class="player-container">
+              <li class="title">title</li>
+              <li class="album">album </li>
+              <li class="artist">artiste</li>
+              <!-- <li id="temps">time<span>00:00</span></li>-->
+              <li class="controlers">
+                <form class="btns" method="get" onsubmit="playOneByOne(); return false"></form>
+              </li>
+              <!-- player default -->
+              <li class="media_player">
+                <audio class="track" src="./mp3/" type="audio/mpeg" controls></audio>
+              </li>
+            </ul>
+          </div>
+
+          <!-- second player -->
+          <div  class="container-piste" id="p-2">
+            <div class="image">
+              <img class="imgsrc" src="./img/track_background.png">
+            </div>
+            <ul class="player-container">
+              <li class="title">title</li>
+              <li class="album">album </li>
+              <li class="artist">artiste</li>
+              <!-- <li id="temps">time<span>00:00</span></li>-->
+              <li class="controlers">
+                <form class="btns" method="get" onsubmit="playOneByOne(); return false"></form>
+              </li>
+              <!-- player default -->
+              <li class="media_player">
+                <audio class="track" src="./mp3/" type="audio/mpeg" controls></audio>
+              </li>
+            </ul>
+          </div>
+          <!-- third player -->
+          <div  class="container-piste" id="p-3">
+            <div class="image">
+              <img class="imgsrc" src="./img/track_background.png">
+            </div>
+            <ul class="player-container">
+              <li class="title">title</li>
+              <li class="album">album </li>
+              <li class="artist">artiste</li>
+              <!-- <li id="temps">time<span>00:00</span></li>-->
+              <li class="controlers">
+                <form class="btns" method="get" onsubmit="playOneByOne(); return false"></form>
+              </li>
+              <!-- player default -->
+              <li class="media_player">
+                <audio class="track" src="./mp3/" type="audio/mpeg" controls></audio>
+              </li>
+            </ul>
+          </div>
+          <!-- four layer -->
+          <div  class="container-piste" id="p-4">
+            <div class="image">
+              <img class="imgsrc" src="./img/track_background.png">
+            </div>
+            <ul class="player-container">
+              <li class="title">title</li>
+              <li class="album">album </li>
+              <li class="artist">artiste</li>
+              <!-- <li id="temps">time<span>00:00</span></li>-->
+              <li class="controlers">
+                <form class="btns" method="get" onsubmit="playOneByOne(); return false"></form>
+              </li>
+              <!-- player default -->
+              <li class="media_player">
+                <audio class="track" src="./mp3/" type="audio/mpeg" controls></audio>
+              </li>
+            </ul>
+          </div>
+          <!-- five player -->
+          <div  class="container-piste" id="p-5">
+            <div class="image">
+              <img class="imgsrc" src="./img/track_background.png">
+            </div>
+            <ul class="player-container">
+              <li class="title">title</li>
+              <li class="album">album </li>
+              <li class="artist">artiste</li>
+              <li class="controlers">
+                <form class="btns" method="get" onsubmit="playOneByOne(); return false"></form>
+              </li>
+              <!-- player default -->
+              <li class="media_player">
+                <audio class="track" src="./mp3/" type="audio/mpeg" controls></audio>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end of boxmusic -->
+    </div>
+  </div>
+</div>
+</section>
+<section id="deux" class="box-container">
+  <div id="box-section">
+
+    <div class="musicplaylist">
+      <!-- informations about song -->
+      <div class="mp3_player">
+        <canvas id="analyser_render"></canvas>
+        <ul>
+          <li id="titre">title </li>
+          <li id="album">album  </li>
+          <li id="artiste">artiste </li>
+          <li id="controlers">
+            <form id="btns" method="get" onsubmit="playRandom(); return false"></form>
+          </li>
+          <li id="audio_box">
+            <!-- ICI ce met l'initMp3Player() & playRandom() -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- YOUTUBE SEARCH -->
+
+<section id="trois" class="box-container">
+  <div class="box-section">
+    <div class="search" onclick = "delai()" >
+      <gcse:searchbox></gcse:searchbox>.
+    </div>
+    <div class="resultats"><gcse:searchresults></gcse:searchresults></div>
+  </div>
+</section>
+<script type="text/javascript" src="./js/youtubeSearch.js"></script>
+<script type="text/javascript" src="./js/songonebyone.js"></script>
+</script>
+
+</script>
+</body>
+</html>

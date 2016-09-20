@@ -1,0 +1,58 @@
+body {
+  overflow: hidden;
+  background-color: black;
+}
+
+.recherche {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  left:43%;
+  top:10%;
+}
+
+.test {
+  position: relative;
+  margin: auto;
+  width: 100px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid grey outset;
+  border-radius: 15%;
+  top: 100px;
+}
+
+.test:hover {
+  cursor: pointer;
+}
+
+
+.confirm {
+  position: absolute;
+  left: 5px;
+  font-weight: bold;
+  font-family: Arial black;
+  top: -9px;
+}
+
+.confirm:hover {
+  cursor: pointer;
+}
+
+.cacher {
+  display: hidden;
+}
+
+.fenetre1 {
+  position: absolute;
+  display: inline-block;
+  top: 200px;
+  left: 335px;
+}
+.hide {
+  display: hidden;
+}
+.resultats {
+  position: relative;
+  top: 1000px;
+}
