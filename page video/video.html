@@ -56,7 +56,7 @@
     <div id="containerPlaylistAleatoire">
       <h1 class="titre">SERIE <a id="cw">blablabla</a></h1>
 
-      <a href="#unevideo" onclick="aleatoire(event);" ><input type="button" id="bouton" name="name" value="Afficher une video aléatoire"/></a><br>
+      <a href="#unevideo" onclick="aleatoire();" ><input type="button" id="bouton" name="name" value="Afficher une video aléatoire"/></a><br>
       <video id="une_video" class="video0"></video>
     </div>
 
@@ -66,7 +66,7 @@
       {id: 2, src: 'astronomyy.mp4'},
       {id: 3, src: 'rihannach.mp4'}
     ];
-    function aleatoire(e){
+    function aleatoire(){
       //document.getElementById('unevideo').controls = true;
       var videoHasard = tableauVideos[Math.floor(Math.random()*tableauVideos.length)].src;
       var video = document.getElementsByClassName("video0")[0];
@@ -84,8 +84,7 @@
       console.log(videoHasard)
       setTimeout(function(){
         document.getElementById('une_video').controls = true;
-        document.getElementById('une_video').scrollIntoView();},500);
-
+        document.getElementById('une_video').scrollIntoView();},100);
     }
 
     </script>
