@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel = "stylesheet" type = "text/css" href= "./css/recherche.css" />
+  </head>
+  <script src = "https://www.youtube.com/iframe_api" ></script>
+  <body>
+
+    <div class = "test" onclick = "captureLien()"  ><p class = "confirm" onclick = "captureLien()">confirmation</p></div>
+    <div class = "recherche">
+      <script>
+      compteur = 0;
+  (function() {
+    var cx = '002590007848321285987:ahbmmnrn4yk';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+    var x = document.getElementsByTagName("a")[2];
+
+  })();
+
+
+
+  function captureLien() {
+  if (compteur == 1){
+    fenetre = document.getElementsByTagName("iframe")[0];
+    document.body.removeChild(fenetre);
+    var x = document.getElementsByTagName("a")[2];
+    var fenetre = document.createElement("iframe");
+    var v = x.toString().slice(32);
+    console.log(v);
+    fenetre.setAttribute("width", "640");
+    fenetre.setAttribute("height", "390");
+    fenetre.setAttribute("id", "ytplayer");
+    fenetre.setAttribute("src","http://www.youtube.com/embed/" + v +"?autoplay=1&enablejsapi=1&?allowfullscreen=1" );
+    fenetre.classList.add("fenetre1");
+    fenetre.setAttribute("type", "text/html");
+    fenetre.setAttribute("border", "");
+    document.body.appendChild(fenetre);
+
+
+  }
+  else {
+  var x = document.getElementsByTagName("a")[2];
+  var fenetre = document.createElement("iframe");
+  var v = x.toString().slice(32);
+  console.log(v);
+  fenetre.setAttribute("width", "640");
+  fenetre.setAttribute("height", "390");
+  fenetre.setAttribute("id", "ytplayer");
+  fenetre.setAttribute("src","http://www.youtube.com/embed/" + v +"?autoplay=1&enablejsapi=1&?allowfullscreen=1" );
+  fenetre.classList.add("fenetre1");
+  fenetre.setAttribute("type", "text/html");
+  fenetre.setAttribute("border", "");
+  document.body.appendChild(fenetre);
+  compteur = 1;
+    }
+  }
+  </script>
+<gcse:searchbox class = "search"></gcse:searchbox></div>
+<div class = "resultats"><gcse:searchresults></gcse:searchresults></div>
+
+  </body>
+</html>

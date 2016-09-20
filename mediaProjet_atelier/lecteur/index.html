@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Lecteur</title>
+    </head>
+    <body>
+        <!-- Audio player tout simple -->
+        <audio controls="controls">
+            <source src="Memory.mp3" type="audio/mpeg">
+            <source src="Memory.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        <!-- FIN Audio player tout simple -->
+
+        <!-- SCRIPT -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var myaudio = new Audio('Memory.mp3');
+
+                myaudio.play(); // Joue la musique
+                myaudio.pause(); // Arrête la musique
+                myaudio.duration; // Retourne la durée du morceau
+                myaudio.currentTime = 0; // Retourne au début du morceau
+                myaudio.lopp = true; // Le morceau tourne en boucle
+                myaudio.muted = true; // Coupe le son 
+            });
+        </script>
+    </body>
+</html>
