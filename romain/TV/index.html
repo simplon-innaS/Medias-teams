@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Service TV</title>
+    <link rel="stylesheet" href="video.css" />
+
+    <script type = "text/javascript" src = "jquery.js"/></script>
+
+  </head>
+  <body>
+
+
+<!--les boutons, skinnables a volonté-->
+<div class = "telecommande">
+  <button id = "chaine1" class ="boutonTele1"  type = "button"  onclick = "chaineUn('rotation.html')">1</button>
+  <button id = "chaine2" class ="boutonTele2"  type = "button"  onclick = "chaineUn('videobackground.html')">2</button>
+  <button id = "chaine3"  class = "boutonTele3" type = "button"  onclick = "chaineUn('animtest/animationlb.html')">3</button>
+  <button id = "chaine4" class = "boutonTele4"  type = "button"  onclick = "chaineUn('lecteuralea.html')">4</button>
+  <div class="onoffswitch">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked onclick = "allumerTv()">
+      <label class="onoffswitch-label" for="myonoffswitch">
+          <span class="onoffswitch-inner"></span>
+          <span class="onoffswitch-switch"></span>
+      </label>
+  </div>
+</div>
+
+
+  <div id="contenu">
+      <div id="bandeau">
+        <span id = "classic"></span> <!--le contenu de l'ecran apparaitra dans ce span-->
+       </div>
+       <div id="bas-ecran"></div>
+      </div>
+      <!--le script a besoin d'avoir les pages html et css dans le même dossier, il va les appeller dans un iframe-->
+  <script>
+  var allumage = 0;
+    function allumerTv() {
+          if ( allumage == 0) {
+            var container = document.getElementById('classic');
+            var fenetre = document.createElement('iframe');
+            container.appendChild(fenetre);
+            fenetre.setAttribute('frameBorder', '0');
+            fenetre.setAttribute('id', 'ecran');
+            fenetre.classList.add('iframePosition');
+            fenetre.setAttribute('src', 'snow3.html');
+            fenetre.setAttribute('border', 'none');
+            fenetre.setAttribute('seamless', 'true');
+            allumage = 1;
+          }
+          else eteindreTv();
+    }
+    function chaineUn(origine) {
+        var fenetre = document.getElementById('ecran');
+        fenetre.setAttribute('src', 'snow3.html');
+        setTimeout(function(){fenetre.setAttribute('src', origine);},110);
+        allumage = 1;
+      }
+
+    function eteindreTv() {
+        var container = document.getElementById('classic');
+        var fenetre = document.getElementById('ecran');
+        container.removeChild(fenetre);
+        allumage = 0;
+    }
+    </script>
+  </body>
+</html>

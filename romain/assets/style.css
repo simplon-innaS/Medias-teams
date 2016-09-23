@@ -1,0 +1,202 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,400i';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+body h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* TODO Resoudre probleme de marge avec le #container */
+/* Container */
+#container {
+  width: 100%;
+}
+
+/* Header */
+header {
+  background: #8E0E00;
+  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18);
+  background: linear-gradient(to left, #8E0E00 , #1F1C18);
+  color: rgb(255,255,255);
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content:space-around;
+
+}
+  /* Titre + Logo */
+  #titre {
+    width: 50%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+    #logoDiv {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 5%;
+    }
+      #logo {
+        width: 50px;
+        height: 50px;
+      }
+    #titre h1 {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+    }
+  /* Navigation */
+  #navigation {
+    width: 50%;
+    display: flex;
+
+    align-items: center;
+  }
+    #navigation ul {
+      list-style-type: none;
+    }
+      #navigation li {
+        display: inline-block;
+        margin: 5px 30px;
+        letter-spacing: 6px;
+      }
+
+
+/* Wrap - Partie principale du site */
+#wrap {
+  width: 100%;
+
+}
+  /* Div Video */
+  #video {
+
+  }
+  @keyframes heartBeat {
+        0% {
+        transform: scale(none);
+        -webkit-transform: scale(none);
+        }
+
+        20% {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        }
+
+        30% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        }
+
+        45% {
+        transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+        }
+
+        50% {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        }
+
+        75% {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+        100% {
+        transform: scale(none);
+        -webkit-transform: scale(none);
+        }
+    }
+      /*FIXME Positionnement à revoir */
+      #videoText {
+        font-size: 3em;
+        color: #fff;
+        position: absolute;
+        animation: heartBeat 10s infinite  ;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+      }
+  /* Intro */
+  #intro {
+    text-align: center;
+    padding: 0 15% 5%;
+  }
+    #intro h1 {
+      text-transform: uppercase;
+      padding-top: 5%;
+      margin-bottom: 5%;
+    }
+  /*  Section */
+  section {
+      display: flex;
+  }
+    section h2 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+  /* Dimensions et Styles communs de la Div Left et de la Div Right   */
+    .side {
+
+    }
+    /* Partie Gauche */
+    #left {
+      width: 50%;
+    }
+    /* Partie Droite */
+    #right {
+      width: 50%;
+    }
+      /* Dimensions et Styles communs à chaque Slide, de droite ou de gauche */
+      .slide {
+        width: 100%;
+        height: 700px;
+      }
+        .texte {
+          padding: 2% 4%;
+
+        }
+        .visual {
+          transition:background-color 0.5s ease;
+          margin: 0 auto;
+
+          margin-top: 20px !important;
+          width: 70%;
+          height: 70%;
+         /*  border: 2px solid #FFF; */
+          border: 10px solid #000;
+          border-radius: 10px;
+          border-bottom-left-radius: 0px !important;
+
+          border-bottom-right-radius: 0px !important;
+
+          overflow: scroll;
+         -webkit-overflow-scrolling: touch;
+         overflow-x: hidden;
+        }
+
+          .texte ul p {
+            font-size: 0.6em;
+          }
+/* Footer */
+footer {
+  background: #8E0E00;
+  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18);
+  background: linear-gradient(to left, #8E0E00 , #1F1C18);
+  color: rgb(255,255,255);
+  width: 100%;
+  height: 150px;
+}
+    #copyright {
+        text-align: center;
+        position: relative;
+        top: 75px;
+        letter-spacing: 5px;
+    }
+    #design {
+        text-align: center;
+    }

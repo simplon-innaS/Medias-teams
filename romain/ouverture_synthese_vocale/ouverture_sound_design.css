@@ -1,0 +1,72 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
+* {
+  font-family: sans-serif ;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.titreAccess {
+  width:75%;
+  margin-left:12.5%;
+  margin-right: 12.5%;
+  font-family:  sans-serif ;
+  height: 50px;
+}
+
+.logoSoundDesign {
+
+  position: absolute;
+  left: 12.5%;
+  height: 50px;
+  width: 50px;
+}
+
+.corpsTexte {
+  width:75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  font-size: 22px;
+  height: 200%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.SoundDesign {
+  height: 41vh;
+  width: 225%;
+  left: 100%;
+  position: absolute;
+  bottom: 0;
+  border-right: 1px solid black;
+}
+.whyDesign {
+  height: 41vh;
+  width: 225%;
+  right: 100%;
+  position: absolute;
+  bottom: 0;
+  border-left: 1px solid black;
+}
+
+.colonneGauche {
+  background: linear-gradient( #8E0E00 , #1F1C18);
+  position: absolute; ;
+  height: 200%;
+  width: 12.5%;
+  left: 0;
+  top: 0;
+  display: inline-block;
+}
+
+.colonneDroite {
+  background: linear-gradient( #8E0E00 , #1F1C18);
+  position: absolute;
+  height: 200%;
+  width:12.5%;
+  right: 0;
+  top: 0;
+  display: inline-block;
+}
